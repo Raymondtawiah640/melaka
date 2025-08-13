@@ -1,1 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+
+/* Optional: link a Tailwind config file if you make one
+@config "./tailwind.config.cjs";
+*/

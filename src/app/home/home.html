@@ -1,0 +1,71 @@
+<app-loading *ngIf="loading"></app-loading>
+
+<div class="min-h-screen bg-[#d2d4e3] p-6">
+  <!-- Header -->
+  <header class="bg-[#3f4195] shadow rounded-lg p-4 flex justify-between items-center">
+    <h1 class="text-2xl font-bold text-white">Dashboard</h1>
+    <button class="bg-[#6e6fb0] text-white px-4 py-2 rounded hover:bg-[#8587b8] transition">
+      Logout
+    </button>
+  </header>
+
+  <!-- Carousel -->
+<div class="relative overflow-hidden rounded-lg mt-6 shadow-lg">
+  <div class="flex transition-transform duration-700 ease-in-out"
+       [style.transform]="'translateX(-' + currentSlide * 100 + '%)'">
+    <img *ngFor="let img of images"
+         [src]="img"
+         class="w-full flex-shrink-0 object-cover h-64">
+  </div>
+
+  <!-- Navigation arrows -->
+  <button (click)="prevSlide()"
+          class="absolute top-1/2 left-4 -translate-y-1/2 bg-[#3f4195] text-white p-2 rounded-full hover:bg-[#6e6fb0]">
+    &#10094;
+  </button>
+  <button (click)="nextSlide()"
+          class="absolute top-1/2 right-4 -translate-y-1/2 bg-[#3f4195] text-white p-2 rounded-full hover:bg-[#6e6fb0]">
+    &#10095;
+  </button>
+</div>
+
+
+  <!-- Stats -->
+  <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
+    <div class="bg-white rounded-lg shadow p-4 border-t-4 border-[#393a91]">
+      <p class="text-sm text-[#393a91]">Users</p>
+      <h2 class="text-2xl font-bold text-[#3f4195]">1,245</h2>
+    </div>
+    <div class="bg-white rounded-lg shadow p-4 border-t-4 border-[#6e6fb0]">
+      <p class="text-sm text-[#6e6fb0]">Sales</p>
+      <h2 class="text-2xl font-bold text-[#3f4195]">$9,560</h2>
+    </div>
+    <div class="bg-white rounded-lg shadow p-4 border-t-4 border-[#8587b8]">
+      <p class="text-sm text-[#8587b8]">Orders</p>
+      <h2 class="text-2xl font-bold text-[#3f4195]">320</h2>
+    </div>
+    <div class="bg-white rounded-lg shadow p-4 border-t-4 border-[#393a91]">
+      <p class="text-sm text-[#393a91]">Feedback</p>
+      <h2 class="text-2xl font-bold text-[#3f4195]">87%</h2>
+    </div>
+  </section>
+
+  <!-- Recent Activity -->
+  <section class="bg-white rounded-lg shadow p-6 mt-6">
+    <h2 class="text-xl font-semibold text-[#3f4195] mb-4">Recent Activity</h2>
+    <ul class="space-y-3">
+      <li class="flex items-center justify-between border-b pb-2">
+        <span class="text-[#393a91]">User JohnDoe signed up</span>
+        <span class="text-sm text-[#6e6fb0]">2 hours ago</span>
+      </li>
+      <li class="flex items-center justify-between border-b pb-2">
+        <span class="text-[#393a91]">Order #1024 completed</span>
+        <span class="text-sm text-[#6e6fb0]">5 hours ago</span>
+      </li>
+      <li class="flex items-center justify-between">
+        <span class="text-[#393a91]">Feedback received from client</span>
+        <span class="text-sm text-[#6e6fb0]">1 day ago</span>
+      </li>
+    </ul>
+  </section>
+</div>

@@ -1,0 +1,60 @@
+<footer class="bg-[#3f4195] text-[#d2d4e3] py-10">
+  <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
+    <!-- Logo & About -->
+    <div>
+      <h2 class="text-2xl font-bold text-white mb-4">Melaka</h2>
+      <p class="text-[#d2d4e3] text-sm">
+        Building modern web applications with simplicity and style.
+      </p>
+    </div>
+
+    <!-- Quick Links -->
+    <div>
+      <h3 class="text-white font-semibold mb-4">Quick Links</h3>
+      <ul class="space-y-2">
+        <li><a href="#" class="hover:text-[#6e6fb0] transition">Home</a></li>
+        <li><a href="#" class="hover:text-[#6e6fb0] transition">About</a></li>
+        <li><a href="#" class="hover:text-[#6e6fb0] transition">Gallery</a></li>
+        <li><a href="#" class="hover:text-[#6e6fb0] transition">Services</a></li>
+      </ul>
+    </div>
+
+    <!-- Resources -->
+    <div>
+      <h3 class="text-white font-semibold mb-4">Resources</h3>
+      <ul class="space-y-2">
+        <li><a href="#" class="hover:text-[#6e6fb0] transition">Docs</a></li>
+        <li><a href="#" class="hover:text-[#6e6fb0] transition">Blog</a></li>
+        <li><a href="#" class="hover:text-[#6e6fb0] transition">Support</a></li>
+        <li><a href="#" class="hover:text-[#6e6fb0] transition">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Newsletter -->
+    <div>
+      <h3 class="text-white font-semibold mb-4">Subscribe</h3>
+      <p class="text-[#d2d4e3] text-sm mb-3">Get the latest updates right in your inbox.</p>
+      <form class="flex">
+        <input 
+          type="email" 
+          placeholder="Enter your email" 
+          class="px-3 py-2 rounded-l bg-[#393a91] text-[#d2d4e3] focus:outline-none focus:ring-2 focus:ring-[#6e6fb0]"
+        />
+        <button 
+          class="px-4 py-2 bg-[#8587b8] text-white rounded-r hover:bg-[#6e6fb0] transition"
+        >
+          Subscribe
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="border-t border-[#8587b8] mt-8 pt-4 text-center text-[#d2d4e3] text-sm">
+    © <span id="currentYear"></span> Melaka. All rights reserved.
+  </div>
+</footer>
+
+<script>
+  document.getElementById("currentYear").textContent = new Date().getFullYear();
+</script>
