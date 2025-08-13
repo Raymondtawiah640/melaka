@@ -19,7 +19,7 @@
        [style.transform]="'translateX(-' + currentSlide * 100 + '%)'">
     <img *ngFor="let img of images"
          [src]="img"
-         class="w-full flex-shrink-0 object-cover h-64">
+         class="w-full flex-shrink-0 object-cover h-110">
   </div>
 
   <!-- Navigation arrows -->
@@ -72,4 +72,57 @@
       </li>
     </ul>
   </section>
+
+<section id="team" class="bg-white rounded-lg shadow p-6 mt-6">
+  <h2 class="text-xl font-semibold text-[#3f4195] mb-4">Team Members</h2>
+  
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6">
+    <!-- Existing Team Member Cards -->
+    <div class="bg-[#f7f8fc] rounded-lg shadow p-4 text-center">
+      <img src="assets/member1.jpg" alt="Team Member"
+           class="w-24 h-24 mx-auto rounded-full object-cover mb-3 border-4 border-[#3f4195]">
+      <h3 class="text-lg font-bold text-[#3f4195]">Jane Doe</h3>
+      <p class="text-sm text-[#6e6fb0]">Project Manager</p>
+    </div>
+
+    <div class="bg-[#f7f8fc] rounded-lg shadow p-4 text-center">
+      <img src="assets/member2.jpg" alt="Team Member"
+           class="w-24 h-24 mx-auto rounded-full object-cover mb-3 border-4 border-[#3f4195]">
+      <h3 class="text-lg font-bold text-[#3f4195]">John Smith</h3>
+      <p class="text-sm text-[#6e6fb0]">UI/UX Designer</p>
+    </div>
+
+    <div class="bg-[#f7f8fc] rounded-lg shadow p-4 text-center">
+      <img src="assets/member3.jpg" alt="Team Member"
+           class="w-24 h-24 mx-auto rounded-full object-cover mb-3 border-4 border-[#3f4195]">
+      <h3 class="text-lg font-bold text-[#3f4195]">Emily Johnson</h3>
+      <p class="text-sm text-[#6e6fb0]">Frontend Developer</p>
+    </div>
+
+    <div class="bg-[#f7f8fc] rounded-lg shadow p-4 text-center">
+      <img src="assets/member4.jpg" alt="Team Member"
+           class="w-24 h-24 mx-auto rounded-full object-cover mb-3 border-4 border-[#3f4195]">
+      <h3 class="text-lg font-bold text-[#3f4195]">Michael Brown</h3>
+      <p class="text-sm text-[#6e6fb0]">Backend Developer</p>
+    </div>
+
+    <!-- New Team Member 1 -->
+    <div class="bg-[#f7f8fc] rounded-lg shadow p-4 text-center">
+      <img src="assets/member5.jpg" alt="Team Member"
+           class="w-24 h-24 mx-auto rounded-full object-cover mb-3 border-4 border-[#3f4195]">
+      <h3 class="text-lg font-bold text-[#3f4195]">Sophia Lee</h3>
+      <p class="text-sm text-[#6e6fb0]">Marketing Specialist</p>
+    </div>
+
+    <!-- New Team Member 2 -->
+    <div class="bg-[#f7f8fc] rounded-lg shadow p-4 text-center">
+      <img src="assets/member6.jpg" alt="Team Member"
+           class="w-24 h-24 mx-auto rounded-full object-cover mb-3 border-4 border-[#3f4195]">
+      <h3 class="text-lg font-bold text-[#3f4195]">David Kim</h3>
+      <p class="text-sm text-[#6e6fb0]">Data Analyst</p>
+    </div>
+  </div>
+</section>
+
 </div>
+

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { Loading } from '../loading/loading';
 import { CommonModule } from '@angular/common';
 
@@ -11,11 +11,12 @@ import { CommonModule } from '@angular/common';
 export class Home implements OnInit {
   loading = true;
   currentSlide = 0;
+  hideHeader = false;       // <-- added
+  lastScrollTop = 0;        // <-- added
   images = [
     'assets/bus.jpg',
     'assets/m1.jpg',
     'assets/m2.webp',
-
   ];
 
   ngOnInit() {
