@@ -12,9 +12,10 @@ export class Home implements OnInit {
   loading = true;
   currentSlide = 0;
   images = [
-    'assets/img1.jpg',
-    'assets/img2.jpg',
-    'assets/img3.jpg'
+    'assets/bus.jpg',
+    'assets/m1.jpg',
+    'assets/m2.webp',
+
   ];
 
   ngOnInit() {
