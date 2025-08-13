@@ -12,10 +12,10 @@
     <div>
       <h3 class="text-white font-semibold mb-4">Quick Links</h3>
       <ul class="space-y-2">
-        <li><a href="#" class="hover:text-[#6e6fb0] transition">Home</a></li>
-        <li><a href="#" class="hover:text-[#6e6fb0] transition">About</a></li>
-        <li><a href="#" class="hover:text-[#6e6fb0] transition">Gallery</a></li>
-        <li><a href="#" class="hover:text-[#6e6fb0] transition">Services</a></li>
+        <li><a routerLink="/home" class="hover:text-[#6e6fb0] transition">Home</a></li>
+        <li><a routerLink="/about" class="hover:text-[#6e6fb0] transition">About</a></li>
+        <li><a routerLink="/gallery" class="hover:text-[#6e6fb0] transition">Gallery</a></li>
+        <li><a routerLink="/services" class="hover:text-[#6e6fb0] transition">Services</a></li>
       </ul>
     </div>
 
@@ -23,11 +23,12 @@
     <div>
       <h3 class="text-white font-semibold mb-4">Resources</h3>
       <ul class="space-y-2">
-        <li><a href="#" class="hover:text-[#6e6fb0] transition">Docs</a></li>
-        <li><a href="#" class="hover:text-[#6e6fb0] transition">Blog</a></li>
-        <li><a href="#" class="hover:text-[#6e6fb0] transition">Support</a></li>
-        <li><a href="#" class="hover:text-[#6e6fb0] transition">Contact</a></li>
+        <li><span class="hover:text-[#6e6fb0] transition cursor-default">Docs</span></li>
+        <li><span class="hover:text-[#6e6fb0] transition cursor-default">Blog</span></li>
+        <li><span class="hover:text-[#6e6fb0] transition cursor-default">Support</span></li>
+        <li><span class="hover:text-[#6e6fb0] transition cursor-default">Contact</span></li>
       </ul>
+
     </div>
 
     <!-- Newsletter -->
@@ -39,9 +40,11 @@
           type="email" 
           placeholder="Enter your email" 
           class="px-3 py-2 rounded-l bg-[#393a91] text-[#d2d4e3] focus:outline-none focus:ring-2 focus:ring-[#6e6fb0]"
+          disabled
         />
         <button 
           class="px-4 py-2 bg-[#8587b8] text-white rounded-r hover:bg-[#6e6fb0] transition"
+          disabled
         >
           Subscribe
         </button>

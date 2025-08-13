@@ -1,3 +1,17 @@
 .clip-slant {
   clip-path: polygon(0 0, 90% 0, 100% 100%, 0% 100%);
+  height: 100vh; /* Ensure full viewport height */
+  position: relative; /* Ensure relative positioning */
+  overflow: hidden;
+}
+
+.animate-bg-pan {
+  animation: bg-pan 20s ease-in-out infinite;
+  background-size: cover; /* ensure image covers area */
+}
+
+@keyframes bg-pan {
+  0%   { background-position: center top; }
+  50%  { background-position: center bottom; }
+  100% { background-position: center top; }
 }
