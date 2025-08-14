@@ -5,8 +5,7 @@ body, html {
   max-width: 100vw;
 }
 
-
-
+  /* Light shine effect */
 @keyframes shine {
   0% { transform: translateX(-100%); }
   100% { transform: translateX(100%); }
@@ -15,4 +14,39 @@ body, html {
 .animate-shine {
   animation: shine 2s linear infinite;
 }
+
+
+/* Rotate of the dot of at the left side of the header */
+.star {
+  font-size: 1rem; /* smaller stars */
+}
+
+.orbit {
+  position: absolute;
+  transform: rotate(var(--angle)) translateX(40px) rotate(calc(-1 * var(--angle)));
+  animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(var(--angle)) translateX(40px) rotate(calc(-1 * var(--angle)));
+  }
+  to {
+    transform: rotate(calc(var(--angle) + 360deg)) translateX(40px) rotate(calc(-1 * (var(--angle) + 360deg)));
+  }
+}
+
+
+/* sponsors animate-marquee */
+
+@keyframes marquee {
+  0%   { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.animate-marquee {
+  animation: marquee 50s linear infinite;
+}
+
+
 

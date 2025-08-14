@@ -1,17 +1,35 @@
 <app-loading *ngIf="loading"></app-loading>
 
-<div class="min-h-screen bg-[#d2d4e3] p-6">
+<div class="min-h-screen bg-[#e4e6fa] p-6">
+
   <!-- Header -->
- <header class="relative shadow rounded-lg p-4 flex justify-between items-center overflow-hidden bg-[#3f4195]">
+<header class="relative shadow rounded-lg p-4 flex justify-between items-center overflow-hidden bg-[#3f4195]">
   <!-- Light shine effect -->
   <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-shine"></div>
 
-  <h1 class="text-2xl font-bold text-white z-10">Marketing Hub </h1>
-  <button class="bg-[#6e6fb0] text-white px-4 py-2 rounded hover:bg-[#8587b8] transition z-10">
-    Logout
-  </button>
-</header>
+  <h1 class="text-2xl font-bold text-white z-10">Marketing Hub</h1>
 
+  <!-- Rotating Dots -->
+<div class="relative w-40 h-40">
+  <!-- Loop of 5 stars at different starting angles -->
+  <div class="absolute top-1/2 left-1/2">
+    <div class="orbit" style="--angle: 0deg;"><span class="star">⭐</span></div>
+  </div>
+  <div class="absolute top-1/2 left-1/2">
+    <div class="orbit" style="--angle: 72deg;"><span class="star">⭐</span></div>
+  </div>
+  <div class="absolute top-1/2 left-1/2">
+    <div class="orbit" style="--angle: 144deg;"><span class="star">⭐</span></div>
+  </div>
+  <div class="absolute top-1/2 left-1/2">
+    <div class="orbit" style="--angle: 216deg;"><span class="star">⭐</span></div>
+  </div>
+  <div class="absolute top-1/2 left-1/2">
+    <div class="orbit" style="--angle: 288deg;"><span class="star">⭐</span></div>
+  </div>
+</div>
+
+</header>
 
   <!-- Carousel -->
 <div class="relative overflow-hidden rounded-lg mt-6 shadow-lg">
@@ -79,21 +97,21 @@
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6">
     <!-- Existing Team Member Cards -->
     <div class="bg-[#f7f8fc] rounded-lg shadow p-4 text-center">
-      <img src="assets/member1.jpg" alt="Team Member"
+      <img src="assets/g1.jpg" alt="Team Member"
            class="w-24 h-24 mx-auto rounded-full object-cover mb-3 border-4 border-[#3f4195]">
       <h3 class="text-lg font-bold text-[#3f4195]">Jane Doe</h3>
       <p class="text-sm text-[#6e6fb0]">Project Manager</p>
     </div>
 
     <div class="bg-[#f7f8fc] rounded-lg shadow p-4 text-center">
-      <img src="assets/member2.jpg" alt="Team Member"
+      <img src="assets/g2.jpg" alt="Team Member"
            class="w-24 h-24 mx-auto rounded-full object-cover mb-3 border-4 border-[#3f4195]">
       <h3 class="text-lg font-bold text-[#3f4195]">John Smith</h3>
       <p class="text-sm text-[#6e6fb0]">UI/UX Designer</p>
     </div>
 
     <div class="bg-[#f7f8fc] rounded-lg shadow p-4 text-center">
-      <img src="assets/member3.jpg" alt="Team Member"
+      <img src="assets/g3.jpg" alt="Team Member"
            class="w-24 h-24 mx-auto rounded-full object-cover mb-3 border-4 border-[#3f4195]">
       <h3 class="text-lg font-bold text-[#3f4195]">Emily Johnson</h3>
       <p class="text-sm text-[#6e6fb0]">Frontend Developer</p>
@@ -124,5 +142,28 @@
   </div>
 </section>
 
+<!-- Sponsors Section -->
+<section id="sponsors" 
+  class="rounded-lg shadow p-6 mt-6 overflow-hidden" 
+  style="background: linear-gradient(90deg, #e5e5e5, #cfcfd6);">
+  
+  <h2 class="text-xl font-semibold text-[#3f4195] mb-4">Our Sponsors</h2>
+
+  <!-- Marquee Container -->
+  <div class="relative overflow-hidden">
+    <div class="flex gap-12 animate-marquee">
+      <img src="assets/g1.jpg" alt="Sponsor 1" class="h-20 w-auto object-contain">
+      <img src="assets/g2.jpg" alt="Sponsor 2" class="h-20 w-auto object-contain">
+      <img src="assets/g3.jpg" alt="Sponsor 3" class="h-20 w-auto object-contain">
+      <img src="assets/g1.jpg" alt="Sponsor 4" class="h-20 w-auto object-contain">
+      <img src="assets/g3.jpg" alt="Sponsor 5" class="h-20 w-auto object-contain">
+      <img src="assets/g2.jpg" alt="Sponsor 6" class="h-20 w-auto object-contain">
+      <img src="assets/sponsor7.png" alt="Sponsor 7" class="h-20 w-auto object-contain">
+      <img src="assets/sponsor8.png" alt="Sponsor 8" class="h-20 w-auto object-contain">
+      <img src="assets/sponsor9.png" alt="Sponsor 9" class="h-20 w-auto object-contain">
+      <img src="assets/sponsor10.png" alt="Sponsor 10" class="h-20 w-auto object-contain">
+    </div>
+  </div>
+</section>
 </div>
 
