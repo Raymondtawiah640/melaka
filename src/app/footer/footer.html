@@ -1,17 +1,26 @@
 <footer class="bg-[#3f4195] text-[#d2d4e3] py-10">
-  <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
+  <div class="container mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+
     <!-- Logo & About -->
     <div>
-      <h2 class="text-2xl font-bold text-white mb-4">Melakah</h2>
-      <p class="text-[#d2d4e3] text-sm">
-        Building modern web applications with simplicity and style.
+      <h2 class="text-2xl font-bold text-white mb-4 tracking-wide">
+        Mel<span class="text-[#6e6fb0]">Δ</span>kah
+      </h2>
+      <p class="text-sm leading-relaxed">
+        Building modern web applications with simplicity and style. Our mission is to make your online presence shine
+        with beautiful and functional designs that are easy to use and maintain.
       </p>
     </div>
 
     <!-- Quick Links -->
     <div>
-      <h3 class="text-white font-semibold mb-4">Quick Links</h3>
-      <ul class="space-y-2">
+      <button 
+        class="flex justify-between items-center w-full text-left mb-4 focus:outline-none md:cursor-default toggle-section"
+        data-target="quickLinks" aria-expanded="false" role="button">
+        <h3 class="text-white font-semibold">Quick Links</h3>
+        <span class="inline-block transform transition-transform duration-300 md:hidden">&#9654;</span>
+      </button>
+      <ul id="quickLinks" class="space-y-2 hidden md:block overflow-hidden transition-all duration-300 ease-in-out">
         <li><a routerLink="/home" class="hover:text-[#6e6fb0] transition">Home</a></li>
         <li><a routerLink="/about" class="hover:text-[#6e6fb0] transition">About</a></li>
         <li><a routerLink="/gallery" class="hover:text-[#6e6fb0] transition">Gallery</a></li>
@@ -21,25 +30,29 @@
 
     <!-- Resources -->
     <div>
-      <h3 class="text-white font-semibold mb-4">Resources</h3>
-      <ul class="space-y-2">
+      <button 
+        class="flex justify-between items-center w-full text-left mb-4 focus:outline-none md:cursor-default toggle-section"
+        data-target="resources" aria-expanded="false" role="button">
+        <h3 class="text-white font-semibold">Resources</h3>
+        <span class="inline-block transform transition-transform duration-300 md:hidden">&#9654;</span>
+      </button>
+      <ul id="resources" class="space-y-2 hidden md:block overflow-hidden transition-all duration-300 ease-in-out">
         <li><span class="hover:text-[#6e6fb0] transition cursor-default">Docs</span></li>
         <li><span class="hover:text-[#6e6fb0] transition cursor-default">Blog</span></li>
         <li><span class="hover:text-[#6e6fb0] transition cursor-default">Support</span></li>
         <li><span class="hover:text-[#6e6fb0] transition cursor-default">Contact</span></li>
       </ul>
-
     </div>
 
     <!-- Newsletter -->
     <div>
       <h3 class="text-white font-semibold mb-4">Subscribe</h3>
-      <p class="text-[#d2d4e3] text-sm mb-3">Get the latest updates right in your inbox.</p>
+      <p class="text-sm mb-3">Get the latest updates right in your inbox.</p>
       <form class="flex">
         <input 
           type="email" 
           placeholder="Enter your email" 
-          class="px-3 py-2 rounded-l bg-[#393a91] text-[#d2d4e3] focus:outline-none focus:ring-2 focus:ring-[#6e6fb0]"
+          class="flex-1 px-3 py-2 rounded-l bg-[#393a91] text-[#d2d4e3] focus:outline-none focus:ring-2 focus:ring-[#6e6fb0]"
           disabled
         />
         <button 
@@ -53,11 +66,9 @@
   </div>
 
   <!-- Bottom Bar -->
-  <div class="border-t border-[#8587b8] mt-8 pt-4 text-center text-[#d2d4e3] text-sm">
-    © <span id="currentYear"></span> Melaka. All rights reserved.
+  <div class="border-t border-[#8587b8] mt-8 pt-4 text-center text-sm">
+    © <span id="currentYear"></span> Melakah. All rights reserved.
   </div>
 </footer>
 
-<script>
-  document.getElementById("currentYear").textContent = new Date().getFullYear();
-</script>
+<div class="hidden rotate-90"></div>

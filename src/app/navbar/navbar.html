@@ -1,10 +1,18 @@
 <nav class="bg-white shadow-md px-6 py-4 relative">
   <div class="container mx-auto flex justify-between items-center">
-    <!-- Logo + Dots -->
+
+    <!-- Logo + Symbol + Dots -->
     <div class="flex items-center space-x-3">
-      <div class="text-2xl font-bold text-[#3f4195]">
-        Melakah
+      <div class="text-2xl font-bold gradient-text flex items-center space-x-1">
+        <span>Mel</span>
+        <!-- Symbolic "A" -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-400" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 2L2 22h20L12 2z" />
+        </svg>
+        <span>kah</span>
       </div>
+
+      <!-- Animated Dots -->
       <div class="flex space-x-1">
         <span class="dot"></span>
         <span class="dot delay-200"></span>
@@ -39,5 +47,6 @@
       <li><a routerLink="/gallery" (click)="closeMenu()" class="nav-link">Gallery</a></li>
       <li><a routerLink="/services" (click)="closeMenu()" class="nav-link">Services</a></li>
     </ul>
-  </div>
+
+  </div> <!-- closes container -->
 </nav>

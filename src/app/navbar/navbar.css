@@ -42,3 +42,19 @@
 .nav-link:hover::after {
   width: 100%;
 }
+
+
+/* Company name Melaka design in colors */
+.gradient-text {
+  background: linear-gradient(
+    90deg,
+    #6e6fb0,  /* Soft periwinkle blue */
+    #3f4195,  /* Deep indigo blue */
+    #065baa,  /* Pale lavender gray */
+    #8587b8,  /* Muted violet-blue */
+    #393a91   /* Dark royal blue */
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; /* for other browsers */
+}
