@@ -8,7 +8,7 @@ import { AppChatBox } from './app-chat-box/app-chat-box';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, Navbar, Footer, CommonModule, AppChatBox],
+  imports: [RouterOutlet, Navbar, Footer, CommonModule],
   templateUrl: './app.html',
   styleUrls: ['./app.css']
 })
