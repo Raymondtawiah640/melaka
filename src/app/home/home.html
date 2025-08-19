@@ -3,172 +3,158 @@
 <div class="min-h-screen bg-[#e4e6fa] p-6">
 
   <!-- Header -->
-<header class="relative shadow rounded-lg px-4 py-2 flex justify-between items-center overflow-hidden bg-[#3f4195]">
-  <!-- Light shine effect -->
-  <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-shine"></div>
+  <header class="relative shadow rounded-lg px-4 py-2 flex justify-between items-center overflow-hidden bg-[#3f4195]">
+    <!-- Light shine effect -->
+    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-shine"></div>
 
-  <h1 class="text-xl font-bold text-white z-10">Marketing Hub</h1>
+    <h1 class="text-xl font-bold text-white z-10">Marketing Hub</h1>
 
-  <!-- Rotating Stars -->
-  <div class="relative w-28 h-28">
-    <!-- Loop of 5 stars at different starting angles -->
-    <div class="absolute top-1/2 left-1/2">
-      <div class="orbit" style="--angle: 0deg;"><span class="star">⭐</span></div>
+    <!-- Rotating Stars -->
+    <div class="relative w-28 h-28">
+      <div class="absolute top-1/2 left-1/2">
+        <div class="orbit" style="--angle: 0deg;"><span class="star">⭐</span></div>
+      </div>
+      <div class="absolute top-1/2 left-1/2">
+        <div class="orbit" style="--angle: 72deg;"><span class="star">⭐</span></div>
+      </div>
+      <div class="absolute top-1/2 left-1/2">
+        <div class="orbit" style="--angle: 144deg;"><span class="star">⭐</span></div>
+      </div>
+      <div class="absolute top-1/2 left-1/2">
+        <div class="orbit" style="--angle: 216deg;"><span class="star">⭐</span></div>
+      </div>
+      <div class="absolute top-1/2 left-1/2">
+        <div class="orbit" style="--angle: 288deg;"><span class="star">⭐</span></div>
+      </div>
     </div>
-    <div class="absolute top-1/2 left-1/2">
-      <div class="orbit" style="--angle: 72deg;"><span class="star">⭐</span></div>
-    </div>
-    <div class="absolute top-1/2 left-1/2">
-      <div class="orbit" style="--angle: 144deg;"><span class="star">⭐</span></div>
-    </div>
-    <div class="absolute top-1/2 left-1/2">
-      <div class="orbit" style="--angle: 216deg;"><span class="star">⭐</span></div>
-    </div>
-    <div class="absolute top-1/2 left-1/2">
-      <div class="orbit" style="--angle: 288deg;"><span class="star">⭐</span></div>
-    </div>
-  </div>
-</header>
-
+  </header>
 
   <!-- Carousel -->
-<div class="relative overflow-hidden rounded-lg mt-6 shadow-lg">
-  <div class="flex transition-transform duration-700 ease-in-out"
-       [style.transform]="'translateX(-' + currentSlide * 100 + '%)'">
-    <img *ngFor="let img of images"
-         [src]="img"
-         class="w-full flex-shrink-0 object-cover h-110">
+  <div class="relative overflow-hidden rounded-lg mt-6 shadow-lg">
+    <div class="flex transition-transform duration-700 ease-in-out"
+         [style.transform]="'translateX(-' + currentSlide * 100 + '%)'">
+      <img *ngFor="let img of images"
+           [src]="img"
+           class="w-full flex-shrink-0 object-cover h-64 sm:h-80 lg:h-110">
+    </div>
+
+    <!-- Navigation arrows -->
+    <button (click)="prevSlide()"
+            class="absolute top-1/2 left-4 -translate-y-1/2 bg-[#3f4195] text-white p-2 rounded-full hover:bg-[#6e6fb0]">
+      &#10094;
+    </button>
+    <button (click)="nextSlide()"
+            class="absolute top-1/2 right-4 -translate-y-1/2 bg-[#3f4195] text-white p-2 rounded-full hover:bg-[#6e6fb0]">
+      &#10095;
+    </button>
   </div>
 
-  <!-- Navigation arrows -->
-  <button (click)="prevSlide()"
-          class="absolute top-1/2 left-4 -translate-y-1/2 bg-[#3f4195] text-white p-2 rounded-full hover:bg-[#6e6fb0]">
-    &#10094;
-  </button>
-  <button (click)="nextSlide()"
-          class="absolute top-1/2 right-4 -translate-y-1/2 bg-[#3f4195] text-white p-2 rounded-full hover:bg-[#6e6fb0]">
-    &#10095;
-  </button>
-</div>
-
-
-<!-- Digital Marketing Highlights -->
-<section class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-10 items-center">
-  <!-- Text Highlights -->
-  <div class="space-y-6">
-    <h2 class="text-3xl font-bold text-[#3f4195]">Why Choose Our Platform?</h2>
-    <p class="text-gray-600 text-lg">
-      Boost your brand visibility, engage the right audience, and grow your business with our
-      all-in-one digital marketing platform.
-    </p>
-    <ul class="space-y-4">
-      <li class="flex items-start">
-        <span class="w-8 h-8 flex items-center justify-center bg-[#393a91] text-white rounded-full mr-3">
-          ✓
-        </span>
-        <span><strong>AI-Powered Campaigns</strong> – Get smart insights and better conversions.</span>
-      </li>
-      <li class="flex items-start">
-        <span class="w-8 h-8 flex items-center justify-center bg-[#6e6fb0] text-white rounded-full mr-3">
-          ✓
-        </span>
-        <span><strong>Real-Time Analytics</strong> – Track performance and optimize instantly.</span>
-      </li>
-      <li class="flex items-start">
-        <span class="w-8 h-8 flex items-center justify-center bg-[#8587b8] text-white rounded-full mr-3">
-          ✓
-        </span>
-        <span><strong>Seamless Integrations</strong> – Connect with tools you already use.</span>
-      </li>
-    </ul>
-  </div>
-
-  <!-- Promo Video -->
-  <div class="relative w-full h-64 sm:h-80 lg:h-full rounded-xl overflow-hidden shadow-lg">
-    <iframe class="w-full h-full"
-      src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-      title="Digital Marketing Promo Video"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen>
-    </iframe>
-  </div>
-</section>
-
-
-<section id="team" class="bg-white rounded-lg shadow p-6 mt-6">
-  <h2 class="text-xl font-semibold text-[#3f4195] mb-4">Team Members</h2>
-  
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6">
-    <!-- Existing Team Member Cards -->
-    <div class="bg-[#f7f8fc] rounded-lg shadow p-4 text-center">
-      <img src="assets/g1.jpg" alt="Team Member"
-           class="w-24 h-24 mx-auto rounded-full object-cover mb-3 border-4 border-[#3f4195]">
-      <h3 class="text-lg font-bold text-[#3f4195]">Jane Doe</h3>
-      <p class="text-sm text-[#6e6fb0]">Project Manager</p>
+  <!-- Digital Marketing Highlights -->
+  <section class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-10 items-center">
+    <!-- Text Highlights -->
+    <div class="space-y-6">
+      <h2 class="text-3xl font-bold text-[#3f4195]">Why Choose Our Platform?</h2>
+      <p class="text-gray-600 text-lg">
+        Boost your brand visibility, engage the right audience, and grow your business with our
+        all-in-one digital marketing platform.
+      </p>
+      <ul class="space-y-4">
+        <li class="flex items-start">
+          <span class="w-8 h-8 flex items-center justify-center bg-[#393a91] text-white rounded-full mr-3">
+            ✓
+          </span>
+          <span><strong>AI-Powered Campaigns</strong> – Get smart insights and better conversions.</span>
+        </li>
+        <li class="flex items-start">
+          <span class="w-8 h-8 flex items-center justify-center bg-[#6e6fb0] text-white rounded-full mr-3">
+            ✓
+          </span>
+          <span><strong>Real-Time Analytics</strong> – Track performance and optimize instantly.</span>
+        </li>
+        <li class="flex items-start">
+          <span class="w-8 h-8 flex items-center justify-center bg-[#8587b8] text-white rounded-full mr-3">
+            ✓
+          </span>
+          <span><strong>Seamless Integrations</strong> – Connect with tools you already use.</span>
+        </li>
+      </ul>
     </div>
 
-    <div class="bg-[#f7f8fc] rounded-lg shadow p-4 text-center">
-      <img src="assets/g2.jpg" alt="Team Member"
-           class="w-24 h-24 mx-auto rounded-full object-cover mb-3 border-4 border-[#3f4195]">
-      <h3 class="text-lg font-bold text-[#3f4195]">John Smith</h3>
-      <p class="text-sm text-[#6e6fb0]">UI/UX Designer</p>
+    <!-- Promo Video -->
+    <div class="relative w-full aspect-video rounded-xl overflow-hidden shadow-lg">
+      <iframe class="absolute top-0 left-0 w-full h-full"
+        src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+        title="Digital Marketing Promo Video"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
     </div>
+  </section>
 
-    <div class="bg-[#f7f8fc] rounded-lg shadow p-4 text-center">
-      <img src="assets/g3.jpg" alt="Team Member"
-           class="w-24 h-24 mx-auto rounded-full object-cover mb-3 border-4 border-[#3f4195]">
-      <h3 class="text-lg font-bold text-[#3f4195]">Emily Johnson</h3>
-      <p class="text-sm text-[#6e6fb0]">Frontend Developer</p>
+  <!-- Team Section -->
+  <section id="team" class="bg-white rounded-lg shadow p-6 mt-6">
+    <h2 class="text-xl font-semibold text-[#3f4195] mb-4">Team Members</h2>
+    
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+      <div class="bg-[#f7f8fc] rounded-lg shadow p-4 text-center">
+        <img src="assets/g1.jpg" alt="Team Member"
+             class="w-24 h-24 mx-auto rounded-full object-cover mb-3 border-4 border-[#3f4195]">
+        <h3 class="text-lg font-bold text-[#3f4195]">Jane Doe</h3>
+        <p class="text-sm text-[#6e6fb0]">Project Manager</p>
+      </div>
+      <div class="bg-[#f7f8fc] rounded-lg shadow p-4 text-center">
+        <img src="assets/g2.jpg" alt="Team Member"
+             class="w-24 h-24 mx-auto rounded-full object-cover mb-3 border-4 border-[#3f4195]">
+        <h3 class="text-lg font-bold text-[#3f4195]">John Smith</h3>
+        <p class="text-sm text-[#6e6fb0]">UI/UX Designer</p>
+      </div>
+      <div class="bg-[#f7f8fc] rounded-lg shadow p-4 text-center">
+        <img src="assets/g3.jpg" alt="Team Member"
+             class="w-24 h-24 mx-auto rounded-full object-cover mb-3 border-4 border-[#3f4195]">
+        <h3 class="text-lg font-bold text-[#3f4195]">Emily Johnson</h3>
+        <p class="text-sm text-[#6e6fb0]">Frontend Developer</p>
+      </div>
+      <div class="bg-[#f7f8fc] rounded-lg shadow p-4 text-center">
+        <img src="assets/member4.jpg" alt="Team Member"
+             class="w-24 h-24 mx-auto rounded-full object-cover mb-3 border-4 border-[#3f4195]">
+        <h3 class="text-lg font-bold text-[#3f4195]">Michael Brown</h3>
+        <p class="text-sm text-[#6e6fb0]">Backend Developer</p>
+      </div>
+      <div class="bg-[#f7f8fc] rounded-lg shadow p-4 text-center">
+        <img src="assets/member5.jpg" alt="Team Member"
+             class="w-24 h-24 mx-auto rounded-full object-cover mb-3 border-4 border-[#3f4195]">
+        <h3 class="text-lg font-bold text-[#3f4195]">Sophia Lee</h3>
+        <p class="text-sm text-[#6e6fb0]">Marketing Specialist</p>
+      </div>
+      <div class="bg-[#f7f8fc] rounded-lg shadow p-4 text-center">
+        <img src="assets/member6.jpg" alt="Team Member"
+             class="w-24 h-24 mx-auto rounded-full object-cover mb-3 border-4 border-[#3f4195]">
+        <h3 class="text-lg font-bold text-[#3f4195]">David Kim</h3>
+        <p class="text-sm text-[#6e6fb0]">Data Analyst</p>
+      </div>
     </div>
+  </section>
 
-    <div class="bg-[#f7f8fc] rounded-lg shadow p-4 text-center">
-      <img src="assets/member4.jpg" alt="Team Member"
-           class="w-24 h-24 mx-auto rounded-full object-cover mb-3 border-4 border-[#3f4195]">
-      <h3 class="text-lg font-bold text-[#3f4195]">Michael Brown</h3>
-      <p class="text-sm text-[#6e6fb0]">Backend Developer</p>
+  <!-- Sponsors Section -->
+  <section id="sponsors" class="rounded-lg shadow p-6 mt-6 overflow-hidden" style="background: linear-gradient(90deg, #e5e5e5, #cfcfd6);">
+    <h2 class="text-xl font-semibold text-[#3f4195] mb-4">Our Clients</h2>
+
+    <!-- Marquee Container -->
+    <div class="relative overflow-hidden">
+      <div class="flex gap-12 animate-marquee">
+        <img src="assets/g1.jpg" alt="Sponsor 1" class="h-20 w-auto object-contain">
+        <img src="assets/g2.jpg" alt="        Sponsor 2" class="h-20 w-auto object-contain">
+        <img src="assets/g3.jpg" alt="Sponsor 3" class="h-20 w-auto object-contain">
+        <img src="assets/g1.jpg" alt="Sponsor 4" class="h-20 w-auto object-contain">
+        <img src="assets/g3.jpg" alt="Sponsor 5" class="h-20 w-auto object-contain">
+        <img src="assets/g2.jpg" alt="Sponsor 6" class="h-20 w-auto object-contain">
+        <img src="assets/sponsor7.png" alt="Sponsor 7" class="h-20 w-auto object-contain">
+        <img src="assets/sponsor8.png" alt="Sponsor 8" class="h-20 w-auto object-contain">
+        <img src="assets/sponsor9.png" alt="Sponsor 9" class="h-20 w-auto object-contain">
+        <img src="assets/sponsor10.png" alt="Sponsor 10" class="h-20 w-auto object-contain">
+      </div>
     </div>
-
-    <!-- New Team Member 1 -->
-    <div class="bg-[#f7f8fc] rounded-lg shadow p-4 text-center">
-      <img src="assets/member5.jpg" alt="Team Member"
-           class="w-24 h-24 mx-auto rounded-full object-cover mb-3 border-4 border-[#3f4195]">
-      <h3 class="text-lg font-bold text-[#3f4195]">Sophia Lee</h3>
-      <p class="text-sm text-[#6e6fb0]">Marketing Specialist</p>
-    </div>
-
-    <!-- New Team Member 2 -->
-    <div class="bg-[#f7f8fc] rounded-lg shadow p-4 text-center">
-      <img src="assets/member6.jpg" alt="Team Member"
-           class="w-24 h-24 mx-auto rounded-full object-cover mb-3 border-4 border-[#3f4195]">
-      <h3 class="text-lg font-bold text-[#3f4195]">David Kim</h3>
-      <p class="text-sm text-[#6e6fb0]">Data Analyst</p>
-    </div>
-  </div>
-</section>
-
-<!-- Sponsors Section -->
-<section id="sponsors" 
-  class="rounded-lg shadow p-6 mt-6 overflow-hidden" 
-  style="background: linear-gradient(90deg, #e5e5e5, #cfcfd6);">
-  
-  <h2 class="text-xl font-semibold text-[#3f4195] mb-4">Our Clie</h2>
-
-  <!-- Marquee Container -->
-  <div class="relative overflow-hidden">
-    <div class="flex gap-12 animate-marquee">
-      <img src="assets/g1.jpg" alt="Sponsor 1" class="h-20 w-auto object-contain">
-      <img src="assets/g2.jpg" alt="Sponsor 2" class="h-20 w-auto object-contain">
-      <img src="assets/g3.jpg" alt="Sponsor 3" class="h-20 w-auto object-contain">
-      <img src="assets/g1.jpg" alt="Sponsor 4" class="h-20 w-auto object-contain">
-      <img src="assets/g3.jpg" alt="Sponsor 5" class="h-20 w-auto object-contain">
-      <img src="assets/g2.jpg" alt="Sponsor 6" class="h-20 w-auto object-contain">
-      <img src="assets/sponsor7.png" alt="Sponsor 7" class="h-20 w-auto object-contain">
-      <img src="assets/sponsor8.png" alt="Sponsor 8" class="h-20 w-auto object-contain">
-      <img src="assets/sponsor9.png" alt="Sponsor 9" class="h-20 w-auto object-contain">
-      <img src="assets/sponsor10.png" alt="Sponsor 10" class="h-20 w-auto object-contain">
-    </div>
-  </div>
-</section>
+  </section>
 </div>
 
