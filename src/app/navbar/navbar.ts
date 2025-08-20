@@ -23,4 +23,12 @@ export class Navbar {
   screenIsSmall(): boolean {
     return window.innerWidth < 768;
   }
+
+  scrollToSection(sectionId: string) {
+    this.closeMenu(); // close menu if open
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
 }

@@ -43,7 +43,12 @@
 >
   <li><a routerLink="/home" (click)="closeMenu()" class="nav-link">Home</a></li>
   <li><a routerLink="/about" (click)="closeMenu()" class="nav-link">About</a></li>
-  <li><a href="#team" (click)="closeMenu()" class="nav-link">Team</a></li>
+ <li>
+  <a href="javascript:void(0)" (click)="scrollToSection('team')" class="nav-link">
+    Team
+  </a>
+</li>
+
   <li><a routerLink="/gallery" (click)="closeMenu()" class="nav-link">Gallery</a></li>
   <li><a routerLink="/services" (click)="closeMenu()" class="nav-link">Services</a></li>
 </ul>
