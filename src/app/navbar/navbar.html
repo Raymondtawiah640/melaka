@@ -1,23 +1,25 @@
 <style>
-  /* custom underline animation */
-  .nav-link {
-    position: relative;
-    display: inline-block;
-    padding-bottom: 2px;
-  }
-  .nav-link::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0%;
-    height: 2px;
-    background-color: #3f4195; /* same as your brand color */
-    transition: width 0.3s ease;
-  }
-  .nav-link:hover::after {
-    width: 100%;
-  }
+/* custom underline animation */
+.nav-link {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 2px;
+  font-weight: 600; /* makes links semi-bold */
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #3f4195; /* brand color */
+  transition: width 0.3s ease;
+}
+.nav-link:hover::after {
+  width: 100%;
+}
+
 </style>
 
 <nav class="bg-white shadow-md px-6 py-4 relative">
