@@ -1,0 +1,13 @@
+/* QR Code animated */
+
+@keyframes borderColors {
+    0%   { border-color: #22c55e; }   /* green */
+    25%  { border-color: #3b82f6; }   /* blue */
+    50%  { border-color: #a855f7; }   /* purple */
+    75%  { border-color: #f97316; }   /* orange */
+    100% { border-color: #22c55e; }   /* back to green */
+  }
+
+  .animate-border {
+    animation: borderColors 4s linear infinite;
+  }
