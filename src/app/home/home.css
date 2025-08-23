@@ -39,6 +39,7 @@ body, html {
 
 /* sponsors animate-marquee */
 
+
 @keyframes marquee {
   0%   { transform: translateX(100%); }
   100% { transform: translateX(-100%); }
@@ -48,5 +49,23 @@ body, html {
   animation: marquee 50s linear infinite;
 }
 
+/* The second section with the heading ending in "?" is the "Why Choose Our Platform" section, which highlights the benefits of the platform. */
+.animated-q {
+  display: inline-block;
+  color: #3f4195;
+  transform-origin: top center; /* pivot like a bell */
+  animation: swing 1.5s infinite ease-in-out alternate, colorShift 3s infinite linear;
+}
 
+@keyframes swing {
+  0%   { transform: rotate(15deg); }
+  100% { transform: rotate(-15deg); }
+}
 
+@keyframes colorShift {
+  0%   { color: #3f4195; }
+  25%  { color: #6e6fb0; }
+  50%  { color: #8587b8; }
+  75%  { color: #393a91; }
+  100% { color: #3f4195; }
+}

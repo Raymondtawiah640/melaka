@@ -6,7 +6,7 @@ import { Services } from './services/services';
 import { Login } from './login/login';
 import { DigitalMarketing } from './services/digital-marketing/digital-marketing';
 import { Contact } from './contact/contact';
-import { SoftwareDevelopment} from './software-development/software-development';
+import { SoftwareDevelopment } from './software-development/software-development';
 import { BrandingAnalytics } from './services/branding-analytics/branding-analytics';
 import { AdvertisingPage } from './advertising-page/advertising-page';
 import { GeneralIt } from './services/general-it/general-it';
@@ -19,11 +19,11 @@ export const routes: Routes = [
   { path: 'gallery', component: Gallery },
   { path: 'services', component: Services },
   { path: 'services/digital-marketing', component: DigitalMarketing },
-  {path: 'contact', component: Contact },
-  {path: 'software-development', component: SoftwareDevelopment},
+  { path: 'contact', component: Contact },
+  { path: 'software-development', component: SoftwareDevelopment },
   { path: 'branding-analytics', component: BrandingAnalytics },
-  { path : 'advertising', component: AdvertisingPage },
+  { path: 'advertising', component: AdvertisingPage },
   { path: 'general', component: GeneralIt },
-  {path: 'social-media', component: SocialMedia },
+  { path: 'social-media', component: SocialMedia },
   { path: 'login', component: Login },
 ];
