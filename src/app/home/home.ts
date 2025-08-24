@@ -1,9 +1,10 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Loading } from '../loading/loading';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-home',
+  standalone: true,
   imports: [Loading, CommonModule],
   templateUrl: './home.html',
   styleUrls: ['./home.css']
@@ -11,12 +12,12 @@ import { CommonModule } from '@angular/common';
 export class Home implements OnInit {
   loading = true;
   currentSlide = 0;
-  hideHeader = false;       // <-- added
-  lastScrollTop = 0;        // <-- added
-  images = [
-    'assets/bus.jpg',
-    'assets/m1.jpg',
-    'assets/m2.webp',
+
+  // Each slide has an image + text
+  slides = [
+    { src: 'assets/bus.jpg', text: 'Reliable Bus Advertising' },
+    { src: 'assets/m1.jpg', text: 'Creative Marketing Solutions' },
+    { src: 'assets/m2.webp', text: 'Boost Your Brand Visibility' }
   ];
 
   ngOnInit() {
@@ -30,10 +31,15 @@ export class Home implements OnInit {
   }
 
   nextSlide() {
-    this.currentSlide = (this.currentSlide + 1) % this.images.length;
+    this.currentSlide = (this.currentSlide + 1) % this.slides.length;
   }
 
   prevSlide() {
-    this.currentSlide = (this.currentSlide - 1 + this.images.length) % this.images.length;
+    this.currentSlide =
+      (this.currentSlide - 1 + this.slides.length) % this.slides.length;
+  }
+
+  goToSlide(index: number) {
+    this.currentSlide = index;
   }
 }

@@ -1,11 +1,21 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-gallery',
-  imports: [],
+  standalone: true, // makes it standalone if you're using Angular 15+
+  imports: [CommonModule],
   templateUrl: './gallery.html',
-  styleUrl: './gallery.css'
+  styleUrls: ['./gallery.css'] // <-- should be styleUrls (plural)
 })
 export class Gallery {
+  selectedImage: string | null = null;
 
+  openImage(image: string) {
+    this.selectedImage = image;
+  }
+
+  closeImage() {
+    this.selectedImage = null;
+  }
 }
