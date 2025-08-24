@@ -27,7 +27,7 @@ export class Home implements OnInit {
     }, 3000);
 
     // Auto-slide every 3 seconds
-    setInterval(() => this.nextSlide(), 3000);
+    setInterval(() => this.nextSlide(), 5000);
   }
 
   nextSlide() {
