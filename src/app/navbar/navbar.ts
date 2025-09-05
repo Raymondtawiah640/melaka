@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -11,6 +11,8 @@ import { CommonModule } from '@angular/common';
 })
 export class Navbar {
   isMenuOpen = false;
+
+  constructor(private router: Router) {}
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
@@ -25,30 +27,41 @@ export class Navbar {
   }
 
   scrollToSection(sectionId: string) {
-  this.closeMenu(); // close menu if open
-  const element = document.getElementById(sectionId);
-  if (element) {
-    const targetY = element.getBoundingClientRect().top + window.scrollY;
-    this.smoothScrollTo(targetY, 1200); // 👈 duration in ms (slower = higher)
-  }
-}
+    this.closeMenu(); // close mobile menu if open
 
-smoothScrollTo(targetY: number, duration: number) {
-  const startY = window.scrollY;
-  const diff = targetY - startY;
-  let startTime: number | null = null;
-
-  const step = (timestamp: number) => {
-    if (!startTime) startTime = timestamp;
-    const progress = Math.min((timestamp - startTime) / duration, 1);
-    window.scrollTo(0, startY + diff * progress);
-
-    if (progress < 1) {
-      requestAnimationFrame(step);
+    if (this.router.url !== '/about') {
+      // Navigate to About first
+      this.router.navigate(['/about']).then(() => {
+        setTimeout(() => this.scrollToElement(sectionId), 100);
+      });
+    } else {
+      this.scrollToElement(sectionId);
     }
-  };
+  }
 
-  requestAnimationFrame(step);
-}
+  private scrollToElement(sectionId: string) {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const targetY = element.getBoundingClientRect().top + window.scrollY;
+      this.smoothScrollTo(targetY, 1200); // duration in ms
+    }
+  }
 
+  private smoothScrollTo(targetY: number, duration: number) {
+    const startY = window.scrollY;
+    const diff = targetY - startY;
+    let startTime: number | null = null;
+
+    const step = (timestamp: number) => {
+      if (!startTime) startTime = timestamp;
+      const progress = Math.min((timestamp - startTime) / duration, 1);
+      window.scrollTo(0, startY + diff * progress);
+
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      }
+    };
+
+    requestAnimationFrame(step);
+  }
 }

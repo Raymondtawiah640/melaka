@@ -17,7 +17,8 @@ export class Home implements OnInit {
   slides = [
     { src: 'assets/bus.jpg', text: 'Reliable Bus Advertising' },
     { src: 'assets/mk.jpg', text: 'Creative Marketing Solutions' },
-    { src: 'assets/mk1.jpg', text: 'Boost Your Brand Visibility' }
+    { src: 'assets/mk1.jpg', text: 'Boost Your Brand Visibility' },
+    { src: 'assets/mk2.jpg', text: 'Images Of LED OUTDOOR SCREEN' }
   ];
 
   ngOnInit() {
