@@ -1,43 +1,28 @@
-<div class="relative w-full">
+<div class="p-6 bg-white">
+  <h2 class="text-3xl font-bold text-[#6e6fb0] mb-6 text-center">Gallery</h2>
 
-  <!-- Video Background -->
-  <video 
-    #bgVideo
-    autoplay 
-    muted 
-    loop 
-    playsinline 
-    class="absolute inset-0 w-full h-full object-cover z-0">
-    <source src="assets/background.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-
-  <!-- Top overlay to hide watermark -->
-  <div class="absolute top-0 left-0 w-full h-24 bg-black/70 z-15 pointer-events-none"></div>
-
-  <!-- Gradient Overlay: Blue to Black -->
-  <div class="absolute inset-0 bg-gradient-to-t from-blue-800/40 via-transparent to-black/20 z-10 pointer-events-none"></div>
-
-  <!-- Gallery Content -->
-  <div class="relative z-20 p-6 max-w-7xl mx-auto">
-    <h2 class="text-3xl font-bold text-white mb-6 text-center drop-shadow-lg">
-      Gallery
-    </h2>
-
-    <!-- Grid: vertical on mobile, grid on tablet/desktop -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      <div *ngFor="let img of images"
-           class="overflow-hidden rounded-xl shadow-md hover:scale-105 transition-transform duration-300 cursor-pointer"
-           (click)="openImage(img)">
-        <img [src]="img" alt="Gallery Image" class="w-full h-64 object-cover">
-      </div>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <!-- Loop through images -->
+    <div *ngFor="let img of [
+        'assets/shirt1.jpg',
+        'assets/Cup.jpg',
+        'assets/New.jpg',
+        'assets/shirt.jpg',
+        'assets/g2.jpg',
+        'assets/g1.jpg',
+        'assets/g3.jpg',
+        'assets/g3.jpg'
+      ]"
+      class="overflow-hidden rounded-xl shadow-md hover:scale-105 transition-transform duration-300 cursor-pointer"
+      (click)="openImage(img)">
+      <img [src]="img" alt="Gallery Image" class="w-full h-64 object-cover">
     </div>
   </div>
 </div>
 
-<!-- Modal / Lightbox -->
+<!-- Modal -->
 <div *ngIf="selectedImage" 
-     class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
+     class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
      (click)="closeImage()">
 
   <!-- Close Button -->
@@ -48,6 +33,6 @@
 
   <img [src]="selectedImage" 
        alt="Enlarged Image" 
-       class="w-full max-w-full sm:max-w-3xl md:max-w-4xl lg:max-w-5xl max-h-[80vh] rounded-lg shadow-lg"
+       class="max-w-4xl max-h-[90vh] rounded-lg shadow-lg"
        (click)="$event.stopPropagation()">
 </div>
