@@ -149,6 +149,46 @@
   </div>
 </section>
 
+<!-- Success Story Section -->
+<section id="success-story" class="bg-gradient-to-r from-[#e4e6fa] to-[#f7f8fc] py-16 px-6">
+  <div class="max-w-5xl mx-auto text-center space-y-8">
+    
+    <h2 class="text-4xl md:text-5xl font-extrabold text-[#3f4195]">Inspiring Success</h2>
+
+    <!-- Story Text -->
+    <div class="bg-white rounded-xl shadow-lg p-8 md:p-12 text-left md:text-justify space-y-6">
+      
+      <!-- Short preview -->
+      <p class="text-gray-700 text-base md:text-lg" *ngIf="!showFullStory">
+        Every brand has a story, but some shine brighter than others. Meet <strong>Ama Kwame</strong>, a young entrepreneur who started with a vision and a small local skincare line...
+      </p>
+
+      <!-- Full story -->
+      <div *ngIf="showFullStory" class="space-y-4">
+        <p class="text-gray-700 text-base md:text-lg">
+          Ama began her journey with just a handful of handcrafted products and a dream to promote natural skincare. Initially, she struggled to get noticed, with minimal social media engagement and low sales. That’s when she partnered with our digital marketing team.
+        </p>
+        <p class="text-gray-700 text-base md:text-lg">
+          We helped her craft a strategy combining eye-catching campaigns, targeted ads, and engaging content that spoke directly to her audience. Within months, her social media followers multiplied, website traffic surged, and sales skyrocketed. Ama’s brand began attracting retail partnerships and loyal online customers alike.
+        </p>
+        <p class="text-gray-700 text-base md:text-lg italic text-[#6e6fb0]">
+          “I never imagined that my small dream could reach so many people. The team helped me believe in my vision and gave me the tools to make it happen. Today, my business feels limitless!” – <strong>Ama Kwame</strong>
+        </p>
+      </div>
+
+      <!-- Read More / Read Less Button -->
+      <div class="text-center mt-4">
+        <button (click)="toggleStory()" 
+                class="px-6 py-2 bg-[#3f4195] text-white font-semibold rounded-full shadow-lg hover:bg-[#6e6fb0] transition duration-300">
+          {{ showFullStory ? 'Read Less' : 'Read More' }}
+        </button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
   <!-- Sponsors Section -->
   <section id="sponsors" class="rounded-lg shadow p-6 mt-6 overflow-hidden" style="background: linear-gradient(90deg, #e5e5e5, #cfcfd6);">
     <h2 class="text-xl font-semibold text-[#3f4195] mb-4">Our Clients</h2>

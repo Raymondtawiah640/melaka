@@ -11,6 +11,8 @@ import { BrandingAnalytics } from './services/branding-analytics/branding-analyt
 import { AdvertisingPage } from './advertising-page/advertising-page';
 import { GeneralIt } from './services/general-it/general-it';
 import { SocialMedia } from './services/social-media/social-media';
+import { Faq } from './faq/faq';
+import { Pricing } from './pricing/pricing';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -25,5 +27,7 @@ export const routes: Routes = [
   { path: 'advertising', component: AdvertisingPage },
   { path: 'general', component: GeneralIt },
   { path: 'social-media', component: SocialMedia },
+  { path: 'faq', component: Faq },
+  { path: 'pricing', component: Pricing },
   { path: 'login', component: Login },
 ];

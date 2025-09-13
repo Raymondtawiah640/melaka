@@ -12,8 +12,8 @@ import { CommonModule } from '@angular/common';
 export class Home implements OnInit {
   loading = true;
   currentSlide = 0;
+  showFullStory = false; // <-- new property
 
-  // Each slide has an image + text
   slides = [
     { src: 'assets/bus.jpg', text: 'Reliable Bus Advertising' },
     { src: 'assets/mk.jpg', text: 'Creative Marketing Solutions' },
@@ -22,12 +22,10 @@ export class Home implements OnInit {
   ];
 
   ngOnInit() {
-    // Hide loader after 3 seconds
     setTimeout(() => {
       this.loading = false;
     }, 3000);
 
-    // Auto-slide every 3 seconds
     setInterval(() => this.nextSlide(), 5000);
   }
 
@@ -42,5 +40,9 @@ export class Home implements OnInit {
 
   goToSlide(index: number) {
     this.currentSlide = index;
+  }
+
+  toggleStory() {
+    this.showFullStory = !this.showFullStory;
   }
 }

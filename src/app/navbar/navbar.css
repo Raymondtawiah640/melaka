@@ -20,29 +20,38 @@
   100% { background-position: 0% 50%; }
 }
 
-/* Nav link underline hover */
+
+/* custom underline animation */
 .nav-link {
   position: relative;
-  color: #393a91;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem; /* space between icon and text */
+  padding-bottom: 2px;
+  font-weight: 600; /* semi-bold */
+  color: #3f4195; /* brand color */
   transition: color 0.3s;
 }
 .nav-link::after {
   content: '';
   position: absolute;
   left: 0;
-  bottom: -4px;
+  bottom: 0;
   width: 0%;
   height: 2px;
-  background-color: #6e6fb0;
+  background-color: #3f4195; /* brand color */
   transition: width 0.3s ease;
 }
 .nav-link:hover {
-  color: #6e6fb0;
+  color: #2b2d70; /* hover color */
 }
 .nav-link:hover::after {
   width: 100%;
 }
-
+/* Ensure icons inherit link color */
+.nav-link i {
+  color: inherit;
+}
 
 /* Company name Melaka design in colors */
 .gradient-text {

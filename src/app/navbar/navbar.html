@@ -1,26 +1,4 @@
-<style>
-/* custom underline animation */
-.nav-link {
-  position: relative;
-  display: inline-block;
-  padding-bottom: 2px;
-  font-weight: 600; /* makes links semi-bold */
-}
-.nav-link::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0%;
-  height: 2px;
-  background-color: #3f4195; /* brand color */
-  transition: width 0.3s ease;
-}
-.nav-link:hover::after {
-  width: 100%;
-}
 
-</style>
 
 <nav class="bg-white shadow-md px-6 py-4 relative">
   <div class="container mx-auto flex justify-between items-center">
@@ -52,45 +30,37 @@
     </button>
 
     <!-- Desktop Nav -->
-    <ul class="hidden md:flex space-x-6 text-[#3f4195] font-medium">
-      <li><a routerLink="" class="nav-link flex items-center space-x-1"><i class="fas fa-home"></i><span>Home</span></a></li>
-      <li><a routerLink="/about" class="nav-link flex items-center space-x-1"><i class="fas fa-info-circle"></i><span>About</span></a></li>
-      <li>
-      <a href="javascript:void(0)" 
-        (click)="scrollToSection('team')" 
-        class="nav-link flex items-center space-x-1">
-        <i class="fas fa-users"></i>
-        <span>Team</span>
-      </a>
-    </li>
-
-      <li><a routerLink="/gallery" class="nav-link flex items-center space-x-1"><i class="fas fa-image"></i><span>Gallery</span></a></li>
-      <li><a routerLink="/services" class="nav-link flex items-center space-x-1"><i class="fas fa-cogs"></i><span>Services</span></a></li>
+    <ul class="hidden md:flex space-x-6 font-medium">
+      <li><a routerLink="/home" class="nav-link"><i class="fas fa-home"></i><span>Home</span></a></li>
+      <li><a routerLink="/about" class="nav-link"><i class="fas fa-info-circle"></i><span>About</span></a></li>
+      <li><a routerLink="/pricing" class="nav-link"><i class="fas fa-tags"></i><span>Pricing</span></a></li>
+      <li><a routerLink="/faq" class="nav-link"><i class="fas fa-question-circle"></i><span>FAQ</span></a></li>
+      <li><a routerLink="/gallery" class="nav-link"><i class="fas fa-image"></i><span>Gallery</span></a></li>
+      <li><a routerLink="/services" class="nav-link"><i class="fas fa-cogs"></i><span>Services</span></a></li>
+      <li><a routerLink="/contact" class="nav-link"><i class="fas fa-envelope"></i><span>Contact</span></a></li>
+      <!-- <li><a routerLink="/login" class="nav-link"><i class="fas fa-sign-in-alt"></i><span>Login</span></a></li> -->
     </ul>
 
-    <!-- Mobile Slideout -->
-    <ul 
-      [ngClass]="{
-        'translate-x-full': !isMenuOpen && screenIsSmall(),
-        'translate-x-0': isMenuOpen && screenIsSmall()
-      }"
-      class="fixed top-0 right-0 h-full w-2/3 
-             md:hidden flex flex-col space-y-6 
-             bg-white shadow-md py-12 px-8 
-             z-50 transition-transform duration-300"
-    >
-      <li><a routerLink="/home" (click)="closeMenu()" class="nav-link flex items-center space-x-3"><i class="fas fa-home"></i><span>Home</span></a></li>
-      <li><a routerLink="/about" (click)="closeMenu()" class="nav-link flex items-center space-x-3"><i class="fas fa-info-circle"></i><span>About</span></a></li>
-      <li>
-        <a href="javascript:void(0)" 
-          (click)="scrollToSection('team')" 
-          class="nav-link flex items-center space-x-1">
-          <i class="fas fa-users"></i>
-          <span>Team</span>
-        </a>
-      </li>
-      <li><a routerLink="/gallery" (click)="closeMenu()" class="nav-link flex items-center space-x-3"><i class="fas fa-image"></i><span>Gallery</span></a></li>
-      <li><a routerLink="/services" (click)="closeMenu()" class="nav-link flex items-center space-x-3"><i class="fas fa-cogs"></i><span>Services</span></a></li>
-    </ul>
+    <!-- Mobile Menu -->
+    <div *ngIf="isMenuOpen" class="fixed inset-0 z-[9999] flex items-center justify-center">
+      <div class="absolute inset-0 bg-black bg-opacity-50" (click)="closeMenu()"></div>
+
+      <div class="relative bg-white rounded-lg shadow-lg w-11/12 max-w-md p-6 z-50 text-black">
+        <div class="flex justify-end mb-4">
+          <button (click)="closeMenu()" class="text-black text-2xl" aria-label="Close menu">✕</button>
+        </div>
+
+        <nav class="flex flex-col space-y-4 text-lg font-medium">
+          <a routerLink="/home" (click)="closeMenu()" class="nav-link"><i class="fas fa-home"></i><span>Home</span></a>
+          <a routerLink="/about" (click)="closeMenu()" class="nav-link"><i class="fas fa-info-circle"></i><span>About</span></a>
+          <a routerLink="/pricing" (click)="closeMenu()" class="nav-link"><i class="fas fa-tags"></i><span>Pricing</span></a>
+          <a routerLink="/faq" (click)="closeMenu()" class="nav-link"><i class="fas fa-question-circle"></i><span>FAQ</span></a>
+          <a routerLink="/gallery" (click)="closeMenu()" class="nav-link"><i class="fas fa-image"></i><span>Gallery</span></a>
+          <a routerLink="/services" (click)="closeMenu()" class="nav-link"><i class="fas fa-cogs"></i><span>Services</span></a>
+          <a routerLink="/contact" (click)="closeMenu()" class="nav-link"><i class="fas fa-envelope"></i><span>Contact</span></a>
+          <!-- <a routerLink="/login" (click)="closeMenu()" class="nav-link"><i class="fas fa-sign-in-alt"></i><span>Login</span></a> -->
+        </nav>
+      </div>
+    </div>
   </div>
 </nav>

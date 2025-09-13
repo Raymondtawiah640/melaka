@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
 })
 export class Navbar {
   isMenuOpen = false;
+  popupOpen = false; // track popup state
 
   constructor(private router: Router) {}
 
@@ -27,10 +28,9 @@ export class Navbar {
   }
 
   scrollToSection(sectionId: string) {
-    this.closeMenu(); // close mobile menu if open
+    this.closeMenu();
 
     if (this.router.url !== '/about') {
-      // Navigate to About first
       this.router.navigate(['/about']).then(() => {
         setTimeout(() => this.scrollToElement(sectionId), 100);
       });
@@ -43,7 +43,7 @@ export class Navbar {
     const element = document.getElementById(sectionId);
     if (element) {
       const targetY = element.getBoundingClientRect().top + window.scrollY;
-      this.smoothScrollTo(targetY, 1200); // duration in ms
+      this.smoothScrollTo(targetY, 1200);
     }
   }
 
@@ -63,5 +63,15 @@ export class Navbar {
     };
 
     requestAnimationFrame(step);
+  }
+
+  // === NEW METHODS for popup ===
+  openPopup() {
+    this.popupOpen = true;
+    this.closeMenu(); // close mobile menu if open
+  }
+
+  closePopup() {
+    this.popupOpen = false;
   }
 }
