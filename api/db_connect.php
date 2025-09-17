@@ -1,22 +1,20 @@
 <?php
-$host = 'localhost';
-$port = 8080;
-$db   = 'melakah';
-$user = 'root';
-$pass = 'kingRaymond@12345';
+$dbhost = "localhost"; 
+$dbport = "3306";
+$dbuser = "dbuser";
+$dbpass = "kilnpassword1";
+$dbname = "melakah";
 
 try {
-    $dsn = "mysql:host=$host;port=$port;dbname=$db;charset=utf8mb4";
-    $pdo = new PDO($dsn, $user, $pass);
+    $pdo = new PDO(
+        "mysql:host=$dbhost;port=$dbport;dbname=$dbname;charset=utf8mb4", 
+        $dbuser, 
+        $dbpass
+    );
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-    // ✅ Don't echo anything here
+    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+    $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 } catch (PDOException $e) {
-    // ❌ Only echo error if connection fails
-    echo json_encode([
-        "success" => false,
-        "message" => "❌ Database connection failed: " . $e->getMessage()
-    ]);
-    exit;
+    die("Database connection failed: " . $e->getMessage());
 }
 ?>
