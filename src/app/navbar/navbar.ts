@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { Router, RouterModule } from '@angular/router';
+import { Router, RouterModule, NavigationStart, NavigationEnd, NavigationCancel, NavigationError } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { Loading } from '../loading/loading';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-navbar',
@@ -14,10 +15,31 @@ export class Navbar {
   loading = true;       // show loader initially
   isMenuOpen = false;
   popupOpen = false;
+  private minLoaderTime = 3000; // minimum loader time in ms
+  private loaderStartTime: number = Date.now();
 
   constructor(private router: Router) {
-    // Simulate loading for 5 seconds
+    // Show loader on first load
     setTimeout(() => this.loading = false, 5000);
+
+    // Listen to route changes
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationStart || 
+                      event instanceof NavigationEnd || 
+                      event instanceof NavigationCancel || 
+                      event instanceof NavigationError)
+    ).subscribe(event => {
+      if (event instanceof NavigationStart) {
+        this.loading = true;           // show loader
+        this.loaderStartTime = Date.now(); // record start
+      } else {
+        // Calculate elapsed time and ensure minimum loader duration
+        const elapsed = Date.now() - this.loaderStartTime;
+        const remaining = this.minLoaderTime - elapsed;
+
+        setTimeout(() => this.loading = false, remaining > 0 ? remaining : 0);
+      }
+    });
   }
 
   toggleMenu() {
@@ -34,11 +56,8 @@ export class Navbar {
 
   scrollToSection(sectionId: string) {
     this.closeMenu();
-
     if (this.router.url !== '/about') {
-      this.router.navigate(['/about']).then(() => {
-        setTimeout(() => this.scrollToElement(sectionId), 100);
-      });
+      this.router.navigate(['/about']).then(() => setTimeout(() => this.scrollToElement(sectionId), 100));
     } else {
       this.scrollToElement(sectionId);
     }
@@ -68,7 +87,6 @@ export class Navbar {
     requestAnimationFrame(step);
   }
 
-  // Popup methods
   openPopup() {
     this.popupOpen = true;
     this.closeMenu();
