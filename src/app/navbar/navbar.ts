@@ -11,10 +11,14 @@ import { Loading } from '../loading/loading';
   styleUrls: ['./navbar.css']
 })
 export class Navbar {
+  loading = true;       // show loader initially
   isMenuOpen = false;
-  popupOpen = false; // track popup state
+  popupOpen = false;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) {
+    // Simulate loading for 5 seconds
+    setTimeout(() => this.loading = false, 5000);
+  }
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
@@ -58,18 +62,16 @@ export class Navbar {
       const progress = Math.min((timestamp - startTime) / duration, 1);
       window.scrollTo(0, startY + diff * progress);
 
-      if (progress < 1) {
-        requestAnimationFrame(step);
-      }
+      if (progress < 1) requestAnimationFrame(step);
     };
 
     requestAnimationFrame(step);
   }
 
-  // === NEW METHODS for popup ===
+  // Popup methods
   openPopup() {
     this.popupOpen = true;
-    this.closeMenu(); // close mobile menu if open
+    this.closeMenu();
   }
 
   closePopup() {

@@ -1,9 +1,10 @@
+<!-- Loading overlay -->
 <app-loading *ngIf="loading"></app-loading>
 
-<nav class="bg-white shadow-md px-6 py-4 relative">
+<nav class="bg-white shadow-md px-6 py-4 relative" *ngIf="!loading">
   <div class="container mx-auto flex justify-between items-center">
 
-    <!-- Logo + Symbol + Dots -->
+    <!-- Logo -->
     <div class="flex items-center space-x-3">
       <div class="text-2xl font-bold gradient-text flex items-center space-x-1">
         <span>Mel</span>
@@ -20,10 +21,7 @@
     </div>
 
     <!-- Hamburger Icon -->
-    <button 
-      (click)="toggleMenu()" 
-      class="md:hidden flex flex-col space-y-1 focus:outline-none"
-    >
+    <button (click)="toggleMenu()" class="md:hidden flex flex-col space-y-1 focus:outline-none">
       <span class="block w-6 h-0.5 bg-[#3f4195]"></span>
       <span class="block w-6 h-0.5 bg-[#3f4195]"></span>
       <span class="block w-6 h-0.5 bg-[#3f4195]"></span>
@@ -31,42 +29,35 @@
 
     <!-- Desktop Nav -->
     <ul class="hidden md:flex space-x-6 font-medium">
-      <li><a routerLink="/home" class="nav-link"><i class="fas fa-home"></i><span>Home</span></a></li>
-      <li><a routerLink="/about" class="nav-link"><i class="fas fa-info-circle"></i><span>About</span></a></li>
-      <li><a routerLink="/faq" class="nav-link"><i class="fas fa-question-circle"></i><span>FAQ</span></a></li>
-      <li><a routerLink="/gallery" class="nav-link"><i class="fas fa-image"></i><span>Gallery</span></a></li>
-      <li><a routerLink="/services" class="nav-link"><i class="fas fa-cogs"></i><span>Services</span></a></li>
-      <li><a routerLink="/contact" class="nav-link"><i class="fas fa-envelope"></i><span>Contact</span></a></li>
+      <li><a routerLink="/home" class="nav-link"><i class="fas fa-home"></i>Home</a></li>
+      <li><a routerLink="/about" class="nav-link"><i class="fas fa-info-circle"></i>About</a></li>
+      <li><a routerLink="/faq" class="nav-link"><i class="fas fa-question-circle"></i>FAQ</a></li>
+      <li><a routerLink="/gallery" class="nav-link"><i class="fas fa-image"></i>Gallery</a></li>
+      <li><a routerLink="/services" class="nav-link"><i class="fas fa-cogs"></i>Services</a></li>
+      <li><a routerLink="/contact" class="nav-link"><i class="fas fa-envelope"></i>Contact</a></li>
     </ul>
 
     <!-- Mobile Menu -->
     <div *ngIf="isMenuOpen" class="fixed inset-0 z-[9999] flex items-center justify-center">
-      <!-- Transparent & blurred overlay -->
-      <div 
-        class="absolute inset-0 bg-black/30 backdrop-blur-md transition-opacity duration-300 ease-in-out" 
-        (click)="closeMenu()">
-      </div>
+      <!-- Overlay -->
+      <div class="absolute inset-0 bg-black/30 backdrop-blur-md" (click)="closeMenu()"></div>
 
-      <!-- Mobile Nav Box -->
-      <div 
-        class="relative bg-white/90 backdrop-blur-sm rounded-lg shadow-lg w-11/12 max-w-md p-6 z-50 text-black 
-               transform transition-all duration-500 ease-out 
-               opacity-0 translate-y-8 
-               animate-slideFadeIn"
-      >
+      <!-- Mobile Nav -->
+      <div class="relative bg-white/90 backdrop-blur-sm rounded-lg shadow-lg w-11/12 max-w-md p-6 z-50">
         <div class="flex justify-end mb-4">
-          <button (click)="closeMenu()" class="text-black text-2xl" aria-label="Close menu">✕</button>
+          <button (click)="closeMenu()" class="text-black text-2xl">✕</button>
         </div>
 
         <nav class="flex flex-col space-y-4 text-lg font-medium">
-          <a routerLink="/home" (click)="closeMenu()" class="nav-link"><i class="fas fa-home"></i><span>Home</span></a>
-          <a routerLink="/about" (click)="closeMenu()" class="nav-link"><i class="fas fa-info-circle"></i><span>About</span></a>
-          <a routerLink="/faq" (click)="closeMenu()" class="nav-link"><i class="fas fa-question-circle"></i><span>FAQ</span></a>
-          <a routerLink="/gallery" (click)="closeMenu()" class="nav-link"><i class="fas fa-image"></i><span>Gallery</span></a>
-          <a routerLink="/services" (click)="closeMenu()" class="nav-link"><i class="fas fa-cogs"></i><span>Services</span></a>
-          <a routerLink="/contact" (click)="closeMenu()" class="nav-link"><i class="fas fa-envelope"></i><span>Contact</span></a>
+          <a routerLink="/home" (click)="closeMenu()" class="nav-link"><i class="fas fa-home"></i>Home</a>
+          <a routerLink="/about" (click)="closeMenu()" class="nav-link"><i class="fas fa-info-circle"></i>About</a>
+          <a routerLink="/faq" (click)="closeMenu()" class="nav-link"><i class="fas fa-question-circle"></i>FAQ</a>
+          <a routerLink="/gallery" (click)="closeMenu()" class="nav-link"><i class="fas fa-image"></i>Gallery</a>
+          <a routerLink="/services" (click)="closeMenu()" class="nav-link"><i class="fas fa-cogs"></i>Services</a>
+          <a routerLink="/contact" (click)="closeMenu()" class="nav-link"><i class="fas fa-envelope"></i>Contact</a>
         </nav>
       </div>
     </div>
+
   </div>
 </nav>
