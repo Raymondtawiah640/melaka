@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Loading } from '../loading/loading';
+
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [Loading, CommonModule],
+  imports: [ CommonModule],
   templateUrl: './home.html',
   styleUrls: ['./home.css']
 })
