@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { Navbar } from './navbar/navbar';
@@ -26,16 +26,50 @@ import { Footer } from './footer/footer';
       title="Chat on WhatsApp">
       <i class="fab fa-whatsapp fa-lg"></i>
     </a>
+
+    <!-- PWA Install Notification -->
+    <div *ngIf="showInstall" 
+         class="fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-purple-700 text-white px-6 py-3 rounded-lg shadow-lg z-50 animate-slide-up">
+      Install Melaka App
+      <button (click)="installApp()" class="ml-4 bg-white text-purple-700 px-3 py-1 rounded">Install</button>
+    </div>
   `,
   styleUrls: ['./app.css']
 })
-export class App { 
+export class App implements OnInit { 
   isLoginPage = false;
+  deferredPrompt: any;
+  showInstall = false;
 
   constructor(private router: Router) {
-    // Listen to route changes
     router.events.subscribe(() => {
       this.isLoginPage = router.url === '/login';
+    });
+  }
+
+  ngOnInit() {
+    // Listen for PWA install prompt
+    window.addEventListener('beforeinstallprompt', (e: any) => {
+      e.preventDefault();
+      this.deferredPrompt = e;
+
+      // Show notification after 3 seconds
+      setTimeout(() => {
+        this.showInstall = true;
+      }, 3000);
+    });
+
+    // Optional: hide notification after 15 seconds if user doesn't click
+    setTimeout(() => this.showInstall = false, 18000);
+  }
+
+  installApp() {
+    if (!this.deferredPrompt) return;
+    this.deferredPrompt.prompt();
+    this.deferredPrompt.userChoice.then((choiceResult: any) => {
+      console.log('User choice:', choiceResult.outcome);
+      this.showInstall = false;
+      this.deferredPrompt = null;
     });
   }
 }
