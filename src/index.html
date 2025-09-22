@@ -5,7 +5,7 @@
   <title>Melaka</title>
 
   <!-- Base href must match your deployment path -->
-  <base href="/melakah">
+  <base href="/melakah/">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -17,7 +17,6 @@
 
   <!-- Theme color for mobile browsers -->
   <meta name="theme-color" content="#6a0dad">
-  <link rel="manifest" href="manifest.webmanifest">
 </head>
 <body>
   <app-root></app-root>
@@ -35,15 +34,17 @@
     })();
   </script>
 
-  <!-- Angular Service Worker registration (only if supported) -->
+  <!-- Angular Service Worker registration (only enable if PWA configured) -->
+  <!--
   <script>
     if ('serviceWorker' in navigator) {
-      // Register service worker for PWA
       navigator.serviceWorker.register('ngsw-worker.js')
         .then(reg => console.log('Service Worker registered:', reg))
         .catch(err => console.log('Service Worker registration failed:', err));
     }
   </script>
+  -->
+
   <noscript>Please enable JavaScript to continue using this application.</noscript>
 </body>
 </html>
