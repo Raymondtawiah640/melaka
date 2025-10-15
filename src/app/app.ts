@@ -20,19 +20,21 @@ import { Footer } from './footer/footer';
 
     <!-- Floating WhatsApp button, hide on login page -->
     <a *ngIf="!isLoginPage"
-      href="https://wa.me/233546965098" 
+      href="https://wa.me/+233546965098"
       target="_blank"
-      class="fixed bottom-6 right-6 bg-green-600 text-white p-4 rounded-full shadow-lg hover:bg-green-700 transition-colors z-50"
+      class="fixed bottom-30 right-6 bg-green-600 text-white p-4 rounded-full shadow-lg hover:bg-green-700 transition-colors z-50"
       title="Chat on WhatsApp">
       <i class="fab fa-whatsapp fa-lg"></i>
     </a>
 
     <!-- PWA Install Notification -->
-    <div *ngIf="showInstall" 
-         class="fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-purple-700 text-white px-6 py-3 rounded-lg shadow-lg z-50 animate-slide-up">
-      Install Melaka App
-      <button (click)="installApp()" class="ml-4 bg-white text-purple-700 px-3 py-1 rounded">Install</button>
-    </div>
+    <div *ngIf="showInstall"
+           class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-purple-700 text-white px-6 py-3 rounded-lg shadow-lg z-50 animate-slide-up flex items-center justify-center text-center">
+        <div class="flex flex-col items-center space-y-2">
+          <span>Install Melaka App</span>
+          <button (click)="installApp()" class="bg-white text-purple-700 px-8 py-2 rounded hover:bg-gray-100 transition-colors">Install</button>
+        </div>
+      </div>
   `,
   styleUrls: ['./app.css']
 })
