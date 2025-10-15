@@ -29,10 +29,14 @@ import { Footer } from './footer/footer';
 
     <!-- PWA Install Notification -->
     <div *ngIf="showInstall"
-           class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-purple-700 text-white px-6 py-3 rounded-lg shadow-lg z-50 animate-slide-up flex items-center justify-center text-center">
+           class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 px-6 py-3 rounded-lg shadow-lg z-50 animate-slide-up flex items-center justify-center text-center"
+           [style.background-color]="'#6e6fb0'">
         <div class="flex flex-col items-center space-y-2">
-          <span>Install Melaka App</span>
-          <button (click)="installApp()" class="bg-white text-purple-700 px-8 py-2 rounded hover:bg-gray-100 transition-colors">Install</button>
+          <span class="text-white">Install Melaka App</span>
+          <button (click)="installApp()" class="rounded hover:bg-gray-100 transition-colors"
+                  [style.background-color]="'#d2d4e3'"
+                  [style.color]="'#3f4195'"
+                  [style.padding]="'8px 16px'">Install</button>
         </div>
       </div>
   `,
