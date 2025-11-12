@@ -24,7 +24,7 @@ export class Home implements OnInit {
   ngOnInit() {
     setTimeout(() => {
       this.loading = false;
-    }, 3000);
+    }, 1000);
 
     setInterval(() => this.nextSlide(), 5000);
   }
