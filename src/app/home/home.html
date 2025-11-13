@@ -157,20 +157,26 @@
 
       <!-- Short preview -->
       <p class="text-gray-700 text-base md:text-lg" *ngIf="!showFullStory">
-        Every brand has a story, but some shine brighter than others. Meet <strong>Ama Kwame</strong>, a young entrepreneur who started with a vision and a small local skincare line...
+        Every brand has a story, but some shine brighter than others. Meet <strong>Ama</strong>, a young entrepreneur who started with a vision and a small local skincare line...
       </p>
 
       <!-- Full story -->
       <div *ngIf="showFullStory" class="space-y-4">
         <p class="text-gray-700 text-base md:text-lg">
-          Ama began her journey with just a handful of handcrafted products and a dream to promote natural skincare. Initially, she struggled to get noticed, with minimal social media engagement and low sales. That's when she partnered with our digital marketing team. We helped her craft a strategy combining eye-catching campaigns, targeted ads, and engaging content that spoke directly to her audience. Within months, her social media followers multiplied, website traffic surged, and sales skyrocketed. Ama's brand began attracting retail partnerships and loyal online customers alike. "I never imagined that my small dream could reach so many people. The team helped me believe in my vision and gave me the tools to make it happen. Today, my business feels limitless!" – Ama Kwame
+          Ama began her journey with just a handful of handcrafted products and a dream to promote natural skincare.
+           Initially, she struggled to get noticed, with minimal social media engagement and low sales. 
+           That's when she partnered with our digital marketing team. We helped her craft a strategy 
+           combining eye-catching campaigns, targeted ads, and engaging content that spoke directly to her audience. 
+           Within months, her social media followers multiplied, website traffic surged, and sales skyrocketed. Ama's brand began attracting retail partnerships
+            and loyal online customers alike. "I never imagined that my small dream could reach so many people. The team helped me believe in my vision and gave 
+            me the tools to make it happen. Today, my business feels limitless!" – Ama 
         </p>
       </div>
 
       <!-- Read More / Read Less Button -->
       <div class="text-center mt-4">
         <button (click)="toggleStory()"
-                class="px-6 py-2 bg-[#3f4195] text-white font-semibold rounded-full shadow-lg hover:bg-[#6e6fb0] transition duration-300">
+                class="px-6 py-2 bg-[#3f4195] text-white font-semibold rounded-full shadow-lg hover:bg-[#6e6fb0] transition duration-300 cursor-pointer">
           {{ showFullStory ? 'Read Less' : 'Read More' }}
         </button>
       </div>
@@ -191,8 +197,6 @@
         <img src="assets\Coaconut Value chain.jpg" alt="Coaconut Value chain" class="h-20 w-auto object-contain">
         <img src="assets\Goshen Organics.jpg" alt="Goshen Organics" class="h-20 w-auto object-contain">
         <img src="assets\Raise Life Foundation.jpg" alt="Raise Life Foundation" class="h-20 w-auto object-contain">
-        <img src="assets/g3.jpg" alt="G3" class="h-20 w-auto object-contain">
-        <img src="assets/g2.jpg" alt="G2" class="h-20 w-auto object-contain">
       </div>
     </div>
   </section>
