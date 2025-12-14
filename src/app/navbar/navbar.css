@@ -48,7 +48,7 @@
   gap: 0.25rem; /* space between icon and text */
   padding-bottom: 2px;
   font-weight: 600; /* semi-bold */
-  color: #3f4195; /* brand color */
+  color: white; /* white color */
   transition: color 0.3s;
 }
 .nav-link::after {
@@ -58,11 +58,11 @@
   bottom: 0;
   width: 0%;
   height: 2px;
-  background-color: #3f4195; /* brand color */
+  background-color: white; /* white color */
   transition: width 0.3s ease;
 }
 .nav-link:hover {
-  color: #2b2d70; /* hover color */
+  color: #e5e5e5; /* light gray hover color */
 }
 .nav-link:hover::after {
   width: 100%;
@@ -85,6 +85,17 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text; /* for other browsers */
+}
+
+/* Mobile menu transition */
+.mobile-menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.mobile-menu.open {
+  max-height: 500px;
 }
 
 /* Responsive navbar is animated*/

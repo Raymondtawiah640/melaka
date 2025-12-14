@@ -13,12 +13,28 @@ export class Home implements OnInit {
   loading = true;
   currentSlide = 0;
   showFullStory = false; // <-- new property
+  autoPlay: any;
+  isMenuOpen = false;
 
   slides = [
-    { src: 'assets/bus.jpg', text: 'Reliable Bus Advertising' },
-    { src: 'assets/mk.jpg', text: 'Creative Marketing Solutions' },
-    { src: 'assets/mk1.jpg', text: 'Boost Your Brand Visibility' },
-    { src: 'assets/mk2.jpg', text: 'LED SCREEN' }
+    {
+      src: 'assets/bus.jpg',
+      title: 'Welcome to Our Platform',
+      subtitle: 'Discover amazing solutions for your business',
+      buttonText: 'Learn More'
+    },
+    {
+      src: 'assets/mk.jpg',
+      title: 'Team Collaboration',
+      subtitle: 'Work together seamlessly from anywhere',
+      buttonText: 'Get Started'
+    },
+    {
+      src: 'assets/mk1.jpg',
+      title: 'Your Workspace',
+      subtitle: 'Create your perfect work environment',
+      buttonText: 'Explore Now'
+    }
   ];
 
   ngOnInit() {
@@ -26,7 +42,7 @@ export class Home implements OnInit {
       this.loading = false;
     }, 1000);
 
-    setInterval(() => this.nextSlide(), 5000);
+    this.autoPlay = setInterval(() => this.nextSlide(), 5000);
   }
 
   nextSlide() {
@@ -44,5 +60,17 @@ export class Home implements OnInit {
 
   toggleStory() {
     this.showFullStory = !this.showFullStory;
+  }
+
+  pauseAutoPlay() {
+    clearInterval(this.autoPlay);
+  }
+
+  resumeAutoPlay() {
+    this.autoPlay = setInterval(() => this.nextSlide(), 5000);
+  }
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
   }
 }

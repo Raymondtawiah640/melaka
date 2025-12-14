@@ -9,8 +9,8 @@ import { Footer } from './footer/footer';
   standalone: true,
   imports: [RouterOutlet, Navbar, Footer, CommonModule],
   template: `
-    <!-- Show navbar only if NOT on login page -->
-    <app-navbar *ngIf="!isLoginPage"></app-navbar>
+    <!-- Show navbar only if NOT on login page and NOT on home page -->
+    <app-navbar *ngIf="!isLoginPage && !isHomePage"></app-navbar>
 
     <!-- Page content -->
     <router-outlet></router-outlet>
@@ -43,14 +43,16 @@ import { Footer } from './footer/footer';
   `,
   styleUrls: ['./app.css']
 })
-export class App implements OnInit { 
+export class App implements OnInit {
   isLoginPage = false;
+  isHomePage = false;
   deferredPrompt: any;
   showInstall = false;
 
   constructor(private router: Router) {
     router.events.subscribe(() => {
       this.isLoginPage = router.url === '/login';
+      this.isHomePage = router.url === '/home' || router.url === '/';
     });
   }
 

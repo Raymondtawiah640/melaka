@@ -15,6 +15,8 @@ export class Navbar {
   loading = true;       // show loader initially
   isMenuOpen = false;
   popupOpen = false;
+  menuIconHidden = false;
+  closeIconHidden = true;
   private minLoaderTime = 3000; // minimum loader time in ms
   private loaderStartTime: number = Date.now();
 
@@ -44,10 +46,14 @@ export class Navbar {
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
+    this.menuIconHidden = !this.menuIconHidden;
+    this.closeIconHidden = !this.closeIconHidden;
   }
 
   closeMenu() {
     this.isMenuOpen = false;
+    this.menuIconHidden = false;
+    this.closeIconHidden = true;
   }
 
   screenIsSmall(): boolean {

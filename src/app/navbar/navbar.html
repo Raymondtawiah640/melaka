@@ -1,69 +1,55 @@
+<!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
 <!-- Loading overlay -->
 <app-loading *ngIf="loading"></app-loading>
 
-<nav class="bg-white shadow-md px-6 py-4 relative" *ngIf="!loading">
-  <div class="container mx-auto flex justify-between items-center">
+<nav class="bg-white md:bg-transparent shadow-md sticky top-0 z-50" *ngIf="!loading">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center h-16">
+      <!-- Logo -->
+      <div class="flex-shrink-0">
+        <a routerLink="/home">
+          <img src="assets/bus.jpg" alt="Melakah" class="h-10 w-auto rounded-full" />
+        </a>
+      </div>
 
-    <!-- Logo -->
-    <div class="flex items-center space-x-3">
-      <div class="text-2xl font-bold gradient-text flex items-center space-x-1">
-        <span>Mel</span>
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#2ECC71]" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 2L2 22h20L12 2z" />
+      <!-- Desktop Menu -->
+      <div class="flex-1 flex justify-center">
+        <div class="hidden md:flex items-center space-x-8">
+          <a routerLink="/home" class="text-white hover:text-blue-600 transition-colors">Home</a>
+          <a routerLink="/about" class="text-white hover:text-blue-600 transition-colors">About</a>
+          <a routerLink="/services" class="text-white hover:text-blue-600 transition-colors">Services</a>
+          <a routerLink="/gallery" class="text-white hover:text-blue-600 transition-colors">Portfolio</a>
+          <a routerLink="/contact" class="text-white hover:text-blue-600 transition-colors">Contact</a>
+        </div>
+      </div>
+
+      <!-- Phone Number -->
+      <a href="tel:+233546965098" class="hidden md:flex items-center bg-blue-600 text-white px-4 py-2 rounded-lg ml-4 hover:bg-blue-700 transition-colors">
+        <i class="fas fa-phone mr-2"></i>
+        <span>+233 54 696 5098</span>
+      </a>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobileMenuBtn" (click)="toggleMenu()" class="md:hidden text-black md:text-white hover:text-blue-600 focus:outline-none" title="Toggle menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path id="menuIcon" [class.hidden]="menuIconHidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          <path id="closeIcon" [class.hidden]="closeIconHidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
         </svg>
-        <span>kah</span>
-      </div>
-      <div class="flex space-x-1">
-        <span class="dot"></span>
-        <span class="dot delay-200"></span>
-        <span class="dot delay-400"></span>
-      </div>
+      </button>
     </div>
-
-    <!-- Live Indicator -->
-    <div class="flex items-center space-x-1 mr-6">
-      <span class="dot-green animate-pulse"></span>
-      <span class="text-green-600 font-semibold text-sm">live</span>
-    </div>
-
-    <!-- Hamburger Icon -->
-    <button (click)="toggleMenu()" class="md:hidden flex flex-col space-y-1 focus:outline-none">
-      <span class="block w-6 h-0.5 bg-[#3f4195]"></span>
-      <span class="block w-6 h-0.5 bg-[#3f4195]"></span>
-      <span class="block w-6 h-0.5 bg-[#3f4195]"></span>
-    </button>
-
-    <!-- Desktop Nav -->
-    <ul class="hidden md:flex space-x-6 font-medium">
-      <li><a routerLink="/home" class="nav-link"><i class="fas fa-home"></i>Home</a></li>
-      <li><a routerLink="/about" class="nav-link"><i class="fas fa-info-circle"></i>About</a></li>
-      <li><a routerLink="/faq" class="nav-link"><i class="fas fa-question-circle"></i>FAQ</a></li>
-      <li><a routerLink="/gallery" class="nav-link"><i class="fas fa-image"></i>Gallery</a></li>
-      <li><a routerLink="/services" class="nav-link"><i class="fas fa-cogs"></i>Services</a></li>
-      <li><a routerLink="/contact" class="nav-link"><i class="fas fa-envelope"></i>Contact</a></li>
-    </ul>
 
     <!-- Mobile Menu -->
-    <div *ngIf="isMenuOpen" class="fixed inset-0 z-[9999] flex items-center justify-center">
-      <!-- Overlay -->
-      <div class="absolute inset-0 bg-black/30 backdrop-blur-md" (click)="closeMenu()"></div>
-
-      <!-- Mobile Nav -->
-      <div class="relative bg-white/90 backdrop-blur-sm rounded-lg shadow-lg w-11/12 max-w-md p-6 z-50">
-        <div class="flex justify-end mb-4">
-          <button (click)="closeMenu()" class="text-black text-2xl">✕</button>
-        </div>
-
-        <nav class="flex flex-col space-y-4 text-lg font-medium">
-          <a routerLink="/home" (click)="closeMenu()" class="nav-link"><i class="fas fa-home"></i>Home</a>
-          <a routerLink="/about" (click)="closeMenu()" class="nav-link"><i class="fas fa-info-circle"></i>About</a>
-          <a routerLink="/faq" (click)="closeMenu()" class="nav-link"><i class="fas fa-question-circle"></i>FAQ</a>
-          <a routerLink="/gallery" (click)="closeMenu()" class="nav-link"><i class="fas fa-image"></i>Gallery</a>
-          <a routerLink="/services" (click)="closeMenu()" class="nav-link"><i class="fas fa-cogs"></i>Services</a>
-          <a routerLink="/contact" (click)="closeMenu()" class="nav-link"><i class="fas fa-envelope"></i>Contact</a>
-        </nav>
+    <div id="mobileMenu" class="mobile-menu" [class.open]="isMenuOpen">
+      <div class="px-2 pt-2 pb-3 space-y-1">
+        <a routerLink="/home" (click)="closeMenu()" class="block px-3 py-2 rounded-md text-black hover:bg-gray-100 hover:text-black transition-colors">Home</a>
+        <a routerLink="/about" (click)="closeMenu()" class="block px-3 py-2 rounded-md text-black hover:bg-gray-100 hover:text-black transition-colors">About</a>
+        <a routerLink="/services" (click)="closeMenu()" class="block px-3 py-2 rounded-md text-black hover:bg-gray-100 hover:text-black transition-colors">Services</a>
+        <a routerLink="/gallery" (click)="closeMenu()" class="block px-3 py-2 rounded-md text-black hover:bg-gray-100 hover:text-black transition-colors">Portfolio</a>
+        <a routerLink="/contact" (click)="closeMenu()" class="block px-3 py-2 rounded-md text-black hover:bg-gray-100 hover:text-black transition-colors">Contact</a>
+        
       </div>
     </div>
-
   </div>
 </nav>
