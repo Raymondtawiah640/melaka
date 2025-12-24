@@ -3,36 +3,38 @@
 
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
     <!-- Loop through images -->
-    <div *ngFor="let img of [
-        'assets/shirt1.jpg',
-        'assets/Cup.jpg',
-        'assets/New.jpg',
-        'assets/shirt.jpg',
-        'assets/g2.jpg',
-        'assets/g1.jpg',
-        'assets/g3.jpg',
-        'assets/g3.jpg'
-      ]"
-      class="overflow-hidden rounded-xl shadow-md hover:scale-105 transition-transform duration-300 cursor-pointer"
-      (click)="openImage(img)">
-      <img [src]="img" alt="Gallery Image" class="w-full h-64 object-cover">
-    </div>
+    @for (img of [
+      'assets/shirt1.jpg',
+      'assets/Cup.jpg',
+      'assets/New.jpg',
+      'assets/shirt.jpg',
+      'assets/g2.jpg',
+      'assets/g1.jpg',
+      'assets/g3.jpg',
+      'assets/g3.jpg'
+      ]; track img) {
+      <div
+        class="overflow-hidden rounded-xl shadow-md hover:scale-105 transition-transform duration-300 cursor-pointer"
+        (click)="openImage(img)">
+        <img [src]="img" alt="Gallery Image" class="w-full h-64 object-cover">
+      </div>
+    }
   </div>
 </div>
 
 <!-- Modal -->
-<div *ngIf="selectedImage" 
-     class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
-     (click)="closeImage()">
-
-  <!-- Close Button -->
-  <button class="absolute top-5 right-5 text-white text-3xl font-bold hover:text-gray-300 cursor-pointer"
-          (click)="closeImage(); $event.stopPropagation()">
-    &times;
-  </button>
-
-  <img [src]="selectedImage" 
-       alt="Enlarged Image" 
-       class="max-w-4xl max-h-[90vh] rounded-lg shadow-lg"
-       (click)="$event.stopPropagation()">
-</div>
+@if (selectedImage) {
+  <div
+    class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
+    (click)="closeImage()">
+    <!-- Close Button -->
+    <button class="absolute top-5 right-5 text-white text-3xl font-bold hover:text-gray-300 cursor-pointer"
+      (click)="closeImage(); $event.stopPropagation()">
+      &times;
+    </button>
+    <img [src]="selectedImage"
+      alt="Enlarged Image"
+      class="max-w-4xl max-h-[90vh] rounded-lg shadow-lg"
+      (click)="$event.stopPropagation()">
+  </div>
+}

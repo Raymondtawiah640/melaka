@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { Router, RouterModule, NavigationStart, NavigationEnd, NavigationCancel, NavigationError } from '@angular/router';
-import { CommonModule } from '@angular/common';
+
 import { Loading } from '../loading/loading';
 import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [Loading, RouterModule, CommonModule],
+  imports: [Loading, RouterModule],
   templateUrl: './navbar.html',
   styleUrls: ['./navbar.css']
 })

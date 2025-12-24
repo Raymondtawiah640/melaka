@@ -1,33 +1,35 @@
 <!-- Toggle Button -->
 <button (click)="toggleChat()"
-        class="fixed bottom-6 right-6 bg-purple-600 text-white px-4 py-2 rounded-full shadow-lg z-50 hover:bg-purple-700">
+  class="fixed bottom-6 right-6 bg-purple-600 text-white px-4 py-2 rounded-full shadow-lg z-50 hover:bg-purple-700">
   {{ showChat ? 'Close Chat' : 'Open Chat' }}
 </button>
 
 <!-- Chat Box -->
-<div *ngIf="showChat" class="fixed bottom-16 right-6 w-80 bg-white shadow-lg rounded-lg flex flex-col z-50">
-  <!-- Header -->
-  <div class="bg-purple-600 text-white p-3 font-semibold rounded-t-lg">
-    Live Chat
-  </div>
-
-  <!-- Messages -->
-  <div class="flex-1 p-3 overflow-y-auto max-h-64 space-y-2">
-    <div *ngFor="let msg of messages">
-      <div class="bg-gray-100 p-2 rounded">
-        {{ msg.message }}
-        <span class="text-xs text-gray-400 block">{{ msg.created_at }}</span>
-      </div>
+@if (showChat) {
+  <div class="fixed bottom-16 right-6 w-80 bg-white shadow-lg rounded-lg flex flex-col z-50">
+    <!-- Header -->
+    <div class="bg-purple-600 text-white p-3 font-semibold rounded-t-lg">
+      Live Chat
+    </div>
+    <!-- Messages -->
+    <div class="flex-1 p-3 overflow-y-auto max-h-64 space-y-2">
+      @for (msg of messages; track msg) {
+        <div>
+          <div class="bg-gray-100 p-2 rounded">
+            {{ msg.message }}
+            <span class="text-xs text-gray-400 block">{{ msg.created_at }}</span>
+          </div>
+        </div>
+      }
+    </div>
+    <!-- Input -->
+    <div class="flex border-t border-gray-200 p-2">
+      <input type="text" [(ngModel)]="newMessage"
+        class="flex-1 border rounded p-2 mr-2" placeholder="Type a message..." />
+      <button (click)="sendMessage()" [disabled]="loading"
+        class="bg-purple-600 text-white px-3 rounded hover:bg-purple-700">
+        Send
+      </button>
     </div>
   </div>
-
-  <!-- Input -->
-  <div class="flex border-t border-gray-200 p-2">
-    <input type="text" [(ngModel)]="newMessage"
-           class="flex-1 border rounded p-2 mr-2" placeholder="Type a message..." />
-    <button (click)="sendMessage()" [disabled]="loading"
-            class="bg-purple-600 text-white px-3 rounded hover:bg-purple-700">
-      Send
-    </button>
-  </div>
-</div>
+}

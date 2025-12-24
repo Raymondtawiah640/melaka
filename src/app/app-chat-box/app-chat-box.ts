@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { interval, Subscription } from 'rxjs';
@@ -16,7 +16,7 @@ interface Message {
 @Component({
   selector: 'app-app-chat-box',
   standalone: true,
-  imports: [CommonModule, HttpClientModule, FormsModule],  // Add CommonModule to handle *ngIf and *ngFor
+  imports: [HttpClientModule, FormsModule],  // Add CommonModule to handle *ngIf and *ngFor
   templateUrl: './app-chat-box.html',
   styleUrls: ['./app-chat-box.css']
 })

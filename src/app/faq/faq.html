@@ -1,16 +1,20 @@
 <div class="max-w-4xl mx-auto py-10 px-4">
   <h1 class="text-3xl font-bold text-[#3f4195] mb-6 text-center">Frequently Asked Questions</h1>
 
-  <div *ngFor="let q of faqs" class="border-b py-4">
-    <button 
-      (click)="q.open = !q.open" 
-      class="w-full flex justify-between items-center text-left font-semibold text-[#3f4195] focus:outline-none"
-    >
-      <span>{{ q.question }}</span>
-      <span class="text-xl">{{ q.open ? '-' : '+' }}</span>
-    </button>
-    <div *ngIf="q.open" class="mt-2 text-gray-700">
-      {{ q.answer }}
+  @for (q of faqs; track q) {
+    <div class="border-b py-4">
+      <button
+        (click)="q.open = !q.open"
+        class="w-full flex justify-between items-center text-left font-semibold text-[#3f4195] focus:outline-none"
+        >
+        <span>{{ q.question }}</span>
+        <span class="text-xl">{{ q.open ? '-' : '+' }}</span>
+      </button>
+      @if (q.open) {
+        <div class="mt-2 text-gray-700">
+          {{ q.answer }}
+        </div>
+      }
     </div>
-  </div>
+  }
 </div>

@@ -3,195 +3,203 @@
   <!-- Main Content -->
   <main class="flex-grow max-w-6xl mx-auto p-6 md:p-10 mt-16 mb-20">
 
-<!-- Accordion Sections -->
+    <!-- Accordion Sections -->
 
-<section class="mb-6">
-  <h2
-    class="accordion-header text-2xl md:text-3xl font-bold text-[#38bdf8] border-b-4 border-[#1e293b] pb-2 mb-2 flex justify-between items-center cursor-pointer select-none"
-    (click)="toggleSection('whoWeAre')"
-  >
-    Who We Are
-    <span
-      class="arrow transition-transform md:hidden"
-      [class.rotate-180]="openSection === 'whoWeAre' && screenWidth < 768">
-      +
-    </span>
-  </h2>
-  <div
-    class="accordion-content text-lg md:text-lg leading-relaxed text-[#cbd5e1] mt-2"
-    *ngIf="openSection === 'whoWeAre'"
-  >
-    Melakah InfoTech Solutions is a premier advertising, technology, and digital marketing powerhouse
-    rooted in the Eastern Region of Ghana. We are a Christ-centered brand, driven by creativity, innovation,
-    and integrity, committed to transforming businesses through cutting-edge digital solutions, impactful
-    brand strategies, and world-class technology services.
-  </div>
-</section>
+    <section class="mb-6">
+      <h2
+        class="accordion-header text-2xl md:text-3xl font-bold text-[#38bdf8] border-b-4 border-[#1e293b] pb-2 mb-2 flex justify-between items-center cursor-pointer select-none"
+        (click)="toggleSection('whoWeAre')"
+        >
+        Who We Are
+        <span
+          class="arrow transition-transform md:hidden"
+          [class.rotate-180]="openSection === 'whoWeAre' && screenWidth < 768">
+          +
+        </span>
+      </h2>
+      @if (openSection === 'whoWeAre') {
+        <div
+          class="accordion-content text-lg md:text-lg leading-relaxed text-[#cbd5e1] mt-2"
+          >
+          Melakah InfoTech Solutions is a premier advertising, technology, and digital marketing powerhouse
+          rooted in the Eastern Region of Ghana. We are a Christ-centered brand, driven by creativity, innovation,
+          and integrity, committed to transforming businesses through cutting-edge digital solutions, impactful
+          brand strategies, and world-class technology services.
+        </div>
+      }
+    </section>
 
-<section class="mb-6">
-  <h2
-    class="accordion-header text-2xl md:text-3xl font-bold text-[#38bdf8] border-b-4 border-[#1e293b] pb-2 mb-2 flex justify-between items-center cursor-pointer select-none"
-    (click)="toggleSection('aboutUs')"
-  >
-    About Us
-    <span 
-      class="arrow transition-transform md:hidden" 
-      [class.rotate-180]="openSection === 'aboutUs' && screenWidth < 768">
-     +
-    </span>
-  </h2>
-  <div
-    class="accordion-content text-lg md:text-lg leading-relaxed text-[#cbd5e1] mt-2"
-    *ngIf="openSection === 'aboutUs'"
-  >
-    Founded with a vision to blend technology, marketing, and creativity, Melakah InfoTech Solutions
-    empowers brands to reach new heights through modern strategies, innovative technologies, and
-    faith-driven values. We stand at the intersection of advertising excellence and digital innovation,
-    delivering solutions that inspire trust, foster community impact, and glorify God through service.
-  </div>
-</section>
+    <section class="mb-6">
+      <h2
+        class="accordion-header text-2xl md:text-3xl font-bold text-[#38bdf8] border-b-4 border-[#1e293b] pb-2 mb-2 flex justify-between items-center cursor-pointer select-none"
+        (click)="toggleSection('aboutUs')"
+        >
+        About Us
+        <span
+          class="arrow transition-transform md:hidden"
+          [class.rotate-180]="openSection === 'aboutUs' && screenWidth < 768">
+          +
+        </span>
+      </h2>
+      @if (openSection === 'aboutUs') {
+        <div
+          class="accordion-content text-lg md:text-lg leading-relaxed text-[#cbd5e1] mt-2"
+          >
+          Founded with a vision to blend technology, marketing, and creativity, Melakah InfoTech Solutions
+          empowers brands to reach new heights through modern strategies, innovative technologies, and
+          faith-driven values. We stand at the intersection of advertising excellence and digital innovation,
+          delivering solutions that inspire trust, foster community impact, and glorify God through service.
+        </div>
+      }
+    </section>
 
-<section class="mb-6">
-  <h2
-    class="accordion-header text-2xl md:text-3xl font-bold text-[#38bdf8] border-b-4 border-[#1e293b] pb-2 mb-2 flex justify-between items-center cursor-pointer select-none"
-    (click)="toggleSection('whatWeDo')"
-  >
-    What We Do
-    <span 
-      class="arrow transition-transform md:hidden" 
-      [class.rotate-180]="openSection === 'whatWeDo' && screenWidth < 768">
-      +
-    </span>
-  </h2>
-  <div
-    class="accordion-content text-lg md:text-lg leading-relaxed text-[#cbd5e1] mt-2"
-    *ngIf="openSection === 'whatWeDo'"
-  >
-    <ul class="list-disc list-inside space-y-2">
-      <li><strong>Advertising & Branding</strong> – Creative advertising campaigns, corporate identity design, brand storytelling, and promotional strategies.</li>
-      <li><strong>Digital Marketing</strong> – Social media marketing, SEO, content marketing, influencer partnerships, digital PR, and performance-driven campaigns.</li>
-      <li><strong>Technology Solutions</strong> – Website development, app development, software solutions, IT consultancy, and cloud integration.</li>
-      <li><strong>Media & Communications</strong> – Video production, photography, copywriting, digital content creation, and strategic communication.</li>
-      <li><strong>Training & Capacity Building</strong> – Digital literacy programs, corporate training in IT & marketing, and workshops on branding and innovation.</li>
-    </ul>
-  </div>
-</section>
+    <section class="mb-6">
+      <h2
+        class="accordion-header text-2xl md:text-3xl font-bold text-[#38bdf8] border-b-4 border-[#1e293b] pb-2 mb-2 flex justify-between items-center cursor-pointer select-none"
+        (click)="toggleSection('whatWeDo')"
+        >
+        What We Do
+        <span
+          class="arrow transition-transform md:hidden"
+          [class.rotate-180]="openSection === 'whatWeDo' && screenWidth < 768">
+          +
+        </span>
+      </h2>
+      @if (openSection === 'whatWeDo') {
+        <div
+          class="accordion-content text-lg md:text-lg leading-relaxed text-[#cbd5e1] mt-2"
+          >
+          <ul class="list-disc list-inside space-y-2">
+            <li><strong>Advertising & Branding</strong> – Creative advertising campaigns, corporate identity design, brand storytelling, and promotional strategies.</li>
+            <li><strong>Digital Marketing</strong> – Social media marketing, SEO, content marketing, influencer partnerships, digital PR, and performance-driven campaigns.</li>
+            <li><strong>Technology Solutions</strong> – Website development, app development, software solutions, IT consultancy, and cloud integration.</li>
+            <li><strong>Media & Communications</strong> – Video production, photography, copywriting, digital content creation, and strategic communication.</li>
+            <li><strong>Training & Capacity Building</strong> – Digital literacy programs, corporate training in IT & marketing, and workshops on branding and innovation.</li>
+          </ul>
+        </div>
+      }
+    </section>
 
-<section class="mb-6">
-  <h2
-    class="accordion-header text-2xl md:text-3xl font-bold text-[#38bdf8] border-b-4 border-[#1e293b] pb-2 mb-2 flex justify-between items-center cursor-pointer select-none"
-    (click)="toggleSection('ourVision')"
-  >
-    Our Vision
-    <span 
-      class="arrow transition-transform md:hidden" 
-      [class.rotate-180]="openSection === 'ourVision' && screenWidth < 768">
-      +
-    </span>
-  </h2>
-  <div
-    class="accordion-content text-lg md:text-lg leading-relaxed text-[#cbd5e1] mt-2"
-    *ngIf="openSection === 'ourVision'"
-  >
-    To become the leading Christ-centered advertising, technology, and digital marketing brand in Ghana
-    and beyond, transforming businesses and inspiring communities through innovation, creativity, and
-    integrity.
-  </div>
-</section>
+    <section class="mb-6">
+      <h2
+        class="accordion-header text-2xl md:text-3xl font-bold text-[#38bdf8] border-b-4 border-[#1e293b] pb-2 mb-2 flex justify-between items-center cursor-pointer select-none"
+        (click)="toggleSection('ourVision')"
+        >
+        Our Vision
+        <span
+          class="arrow transition-transform md:hidden"
+          [class.rotate-180]="openSection === 'ourVision' && screenWidth < 768">
+          +
+        </span>
+      </h2>
+      @if (openSection === 'ourVision') {
+        <div
+          class="accordion-content text-lg md:text-lg leading-relaxed text-[#cbd5e1] mt-2"
+          >
+          To become the leading Christ-centered advertising, technology, and digital marketing brand in Ghana
+          and beyond, transforming businesses and inspiring communities through innovation, creativity, and
+          integrity.
+        </div>
+      }
+    </section>
 
-<section class="mb-6">
-  <h2
-    class="accordion-header text-2xl md:text-3xl font-bold text-[#38bdf8] border-b-4 border-[#1e293b] pb-2 mb-2 flex justify-between items-center cursor-pointer select-none"
-    (click)="toggleSection('ourMission')"
-  >
-    Our Mission
-    <span 
-      class="arrow transition-transform md:hidden" 
-      [class.rotate-180]="openSection === 'ourMission' && screenWidth < 768">
-      +
-    </span>
-  </h2>
-  <div
-    class="accordion-content text-lg md:text-lg leading-relaxed text-[#cbd5e1] mt-2"
-    *ngIf="openSection === 'ourMission'"
-  >
-    To empower brands, organizations, and individuals with cutting-edge technology and innovative
-    marketing solutions, guided by faith, excellence, and integrity, while promoting sustainable growth and
-    creating a lasting impact in society.
-  </div>
-</section>
+    <section class="mb-6">
+      <h2
+        class="accordion-header text-2xl md:text-3xl font-bold text-[#38bdf8] border-b-4 border-[#1e293b] pb-2 mb-2 flex justify-between items-center cursor-pointer select-none"
+        (click)="toggleSection('ourMission')"
+        >
+        Our Mission
+        <span
+          class="arrow transition-transform md:hidden"
+          [class.rotate-180]="openSection === 'ourMission' && screenWidth < 768">
+          +
+        </span>
+      </h2>
+      @if (openSection === 'ourMission') {
+        <div
+          class="accordion-content text-lg md:text-lg leading-relaxed text-[#cbd5e1] mt-2"
+          >
+          To empower brands, organizations, and individuals with cutting-edge technology and innovative
+          marketing solutions, guided by faith, excellence, and integrity, while promoting sustainable growth and
+          creating a lasting impact in society.
+        </div>
+      }
+    </section>
 
-<section class="mb-6">
-  <h2
-    class="accordion-header text-2xl md:text-3xl font-bold text-[#38bdf8] border-b-4 border-[#1e293b] pb-2 mb-2 flex justify-between items-center cursor-pointer select-none"
-    (click)="toggleSection('coreValues')"
-  >
-    Our Core Values (C.F.I.R.)
-    <span 
-      class="arrow transition-transform md:hidden" 
-      [class.rotate-180]="openSection === 'coreValues' && screenWidth < 768">
-      +
-    </span>
-  </h2>
-  <div
-    class="accordion-content text-lg md:text-lg leading-relaxed text-[#cbd5e1] mt-2"
-    *ngIf="openSection === 'coreValues'"
-  >
-    <ul class="list-disc list-inside space-y-2">
-      <li><strong>Christ-Centered</strong> – We honor God in everything we do and draw inspiration from His wisdom and grace.</li>
-      <li><strong>Faith</strong> – We believe in possibilities and approach every challenge with confidence and conviction.</li>
-      <li><strong>Integrity</strong> – We uphold transparency, honesty, and ethical practices in all our dealings.</li>
-      <li><strong>Rest</strong> – We embrace balance, peace, and clarity in delivering solutions that inspire growth without burnout.</li>
-    </ul>
-  </div>
-</section>
+    <section class="mb-6">
+      <h2
+        class="accordion-header text-2xl md:text-3xl font-bold text-[#38bdf8] border-b-4 border-[#1e293b] pb-2 mb-2 flex justify-between items-center cursor-pointer select-none"
+        (click)="toggleSection('coreValues')"
+        >
+        Our Core Values (C.F.I.R.)
+        <span
+          class="arrow transition-transform md:hidden"
+          [class.rotate-180]="openSection === 'coreValues' && screenWidth < 768">
+          +
+        </span>
+      </h2>
+      @if (openSection === 'coreValues') {
+        <div
+          class="accordion-content text-lg md:text-lg leading-relaxed text-[#cbd5e1] mt-2"
+          >
+          <ul class="list-disc list-inside space-y-2">
+            <li><strong>Christ-Centered</strong> – We honor God in everything we do and draw inspiration from His wisdom and grace.</li>
+            <li><strong>Faith</strong> – We believe in possibilities and approach every challenge with confidence and conviction.</li>
+            <li><strong>Integrity</strong> – We uphold transparency, honesty, and ethical practices in all our dealings.</li>
+            <li><strong>Rest</strong> – We embrace balance, peace, and clarity in delivering solutions that inspire growth without burnout.</li>
+          </ul>
+        </div>
+      }
+    </section>
 
-<section class="mb-6">
-  <h2
-    class="accordion-header text-2xl md:text-3xl font-bold text-[#38bdf8] border-b-4 border-[#1e293b] pb-2 mb-2 flex justify-between items-center cursor-pointer select-none"
-    (click)="toggleSection('whyChooseUs')"
-  >
-    Why Choose Us
-    <span 
-      class="arrow transition-transform md:hidden" 
-      [class.rotate-180]="openSection === 'whyChooseUs' && screenWidth < 768">
-      +
-    </span>
-  </h2>
-  <div
-    class="accordion-content text-lg md:text-lg leading-relaxed text-[#cbd5e1] mt-2"
-    *ngIf="openSection === 'whyChooseUs'"
-  >
-    <ul class="list-disc list-inside space-y-2">
-      <li>✔ Trusted partner for digital transformation in the Eastern Region of Ghana.</li>
-      <li>✔ A blend of creativity, innovation, and faith-driven excellence.</li>
-      <li>✔ Tailored strategies that deliver measurable results.</li>
-      <li>✔ A team of passionate professionals dedicated to your success.</li>
-      <li>✔ Commitment to community growth, ethical business, and long-term impact.</li>
-    </ul>
-  </div>
-</section>
+    <section class="mb-6">
+      <h2
+        class="accordion-header text-2xl md:text-3xl font-bold text-[#38bdf8] border-b-4 border-[#1e293b] pb-2 mb-2 flex justify-between items-center cursor-pointer select-none"
+        (click)="toggleSection('whyChooseUs')"
+        >
+        Why Choose Us
+        <span
+          class="arrow transition-transform md:hidden"
+          [class.rotate-180]="openSection === 'whyChooseUs' && screenWidth < 768">
+          +
+        </span>
+      </h2>
+      @if (openSection === 'whyChooseUs') {
+        <div
+          class="accordion-content text-lg md:text-lg leading-relaxed text-[#cbd5e1] mt-2"
+          >
+          <ul class="list-disc list-inside space-y-2">
+            <li>✔ Trusted partner for digital transformation in the Eastern Region of Ghana.</li>
+            <li>✔ A blend of creativity, innovation, and faith-driven excellence.</li>
+            <li>✔ Tailored strategies that deliver measurable results.</li>
+            <li>✔ A team of passionate professionals dedicated to your success.</li>
+            <li>✔ Commitment to community growth, ethical business, and long-term impact.</li>
+          </ul>
+        </div>
+      }
+    </section>
 
-<section class="mb-6">
-  <h2
-    class="accordion-header text-2xl md:text-3xl font-bold text-[#38bdf8] border-b-4 border-[#1e293b] pb-2 mb-2 flex justify-between items-center cursor-pointer select-none"
-    (click)="toggleSection('brandPromise')"
-  >
-    Our Brand Promise
-    <span 
-      class="arrow transition-transform md:hidden" 
-      [class.rotate-180]="openSection === 'brandPromise' && screenWidth < 768">
-      +
-    </span>
-  </h2>
-  <div
-    class="accordion-content text-lg md:text-lg leading-relaxed text-[#cbd5e1] mt-2"
-    *ngIf="openSection === 'brandPromise'"
-  >
-    At Melakah InfoTech Solutions, we promise to deliver value-driven, innovative, and ethical solutions that
-    go beyond expectations—empowering businesses to thrive, influence, and leave a legacy.
-  </div>
-</section>
+    <section class="mb-6">
+      <h2
+        class="accordion-header text-2xl md:text-3xl font-bold text-[#38bdf8] border-b-4 border-[#1e293b] pb-2 mb-2 flex justify-between items-center cursor-pointer select-none"
+        (click)="toggleSection('brandPromise')"
+        >
+        Our Brand Promise
+        <span
+          class="arrow transition-transform md:hidden"
+          [class.rotate-180]="openSection === 'brandPromise' && screenWidth < 768">
+          +
+        </span>
+      </h2>
+      @if (openSection === 'brandPromise') {
+        <div
+          class="accordion-content text-lg md:text-lg leading-relaxed text-[#cbd5e1] mt-2"
+          >
+          At Melakah InfoTech Solutions, we promise to deliver value-driven, innovative, and ethical solutions that
+          go beyond expectations—empowering businesses to thrive, influence, and leave a legacy.
+        </div>
+      }
+    </section>
 
     <!-- Leadership Team Section -->
     <section id="team" class="mb-12 relative">
@@ -203,55 +211,55 @@
         <!-- Team Members -->
         <div class="bg-[#1e293b]/70 backdrop-blur-md rounded-xl shadow-2xl p-6 text-center hover:scale-105 transition duration-300">
           <img src="assets/PR-Marketing.jpg" alt="Anita Ama Obuobi"
-               class="team-img w-32 h-32 mx-auto rounded-full object-cover mb-3 border-4 border-[#38bdf8] shadow-md cursor-pointer">
+            class="team-img w-32 h-32 mx-auto rounded-full object-cover mb-3 border-4 border-[#38bdf8] shadow-md cursor-pointer">
           <h3 class="text-lg font-extrabold text-[#38bdf8]">Anita Ama Obuobi</h3>
           <p class="text-sm text-[#cbd5e1]">Head of PR, Marketing and Sales</p>
         </div>
 
         <div class="bg-[#1e293b]/70 backdrop-blur-md rounded-xl shadow-2xl p-6 text-center hover:scale-105 transition duration-300">
           <img src="assets/Boss.jpg" alt="Larbi-Gyamfi Kwadwo Asare"
-               class="team-img w-32 h-32 mx-auto rounded-full object-cover mb-3 border-4 border-[#38bdf8] shadow-md cursor-pointer">
+            class="team-img w-32 h-32 mx-auto rounded-full object-cover mb-3 border-4 border-[#38bdf8] shadow-md cursor-pointer">
           <h3 class="text-lg font-extrabold text-[#38bdf8]">Larbi-Gyamfi Kwadwo Asare</h3>
           <p class="text-sm text-[#cbd5e1]">Head of Operations and Technical Officer</p>
         </div>
 
         <div class="bg-[#1e293b]/70 backdrop-blur-md rounded-xl shadow-2xl p-6 text-center hover:scale-105 transition duration-300">
           <img src="assets/Administrator.jpg" alt="Stephen Dorkutchoe"
-               class="team-img w-32 h-32 mx-auto rounded-full object-cover mb-3 border-4 border-[#38bdf8] shadow-md cursor-pointer">
+            class="team-img w-32 h-32 mx-auto rounded-full object-cover mb-3 border-4 border-[#38bdf8] shadow-md cursor-pointer">
           <h3 class="text-lg font-extrabold text-[#38bdf8]">Stephen Dorkutchoe</h3>
           <p class="text-sm text-[#cbd5e1]">Head of Administration, Legal and Financial Affairs</p>
         </div>
 
         <div class="bg-[#1e293b]/70 backdrop-blur-md rounded-xl shadow-2xl p-6 text-center hover:scale-105 transition duration-300">
           <img src="assets/gerald.jpg" alt="Gerald Afari A. B"
-               class="team-img w-32 h-32 mx-auto rounded-full object-cover mb-3 border-4 border-[#38bdf8] shadow-md cursor-pointer">
+            class="team-img w-32 h-32 mx-auto rounded-full object-cover mb-3 border-4 border-[#38bdf8] shadow-md cursor-pointer">
           <h3 class="text-lg font-extrabold text-[#38bdf8]">Gerald Afari A. B</h3>
           <p class="text-sm text-[#cbd5e1]">Project Manager</p>
         </div>
 
         <div class="bg-[#1e293b]/70 backdrop-blur-md rounded-xl shadow-2xl p-6 text-center hover:scale-105 transition duration-300">
           <img src="assets/graphics.jpg" alt="Asiedu Nana Kwame Gyekye"
-               class="team-img w-32 h-32 mx-auto rounded-full object-cover mb-3 border-4 border-[#38bdf8] shadow-md cursor-pointer">
-                    <h3 class="text-lg font-extrabold text-[#38bdf8]">Asiedu Nana Kwame Gyekye</h3>
+            class="team-img w-32 h-32 mx-auto rounded-full object-cover mb-3 border-4 border-[#38bdf8] shadow-md cursor-pointer">
+          <h3 class="text-lg font-extrabold text-[#38bdf8]">Asiedu Nana Kwame Gyekye</h3>
           <p class="text-sm text-[#cbd5e1]">Graphic Designer/Editor</p>
         </div>
 
         <div class="bg-[#1e293b]/70 backdrop-blur-md rounded-xl shadow-2xl p-6 text-center hover:scale-105 transition duration-300">
           <img src="" alt="Amoah Samuel Yirenkyi"
-               class="team-img w-32 h-32 mx-auto rounded-full object-cover mb-3 border-4 border-[#38bdf8] shadow-md cursor-pointer">
+            class="team-img w-32 h-32 mx-auto rounded-full object-cover mb-3 border-4 border-[#38bdf8] shadow-md cursor-pointer">
           <h3 class="text-lg font-extrabold text-[#38bdf8]">Amoah Samuel Yirenkyi</h3>
           <p class="text-sm text-[#cbd5e1]">Network Engineer</p>
         </div>
 
         <div class="bg-[#1e293b]/70 backdrop-blur-md rounded-xl shadow-2xl p-6 text-center hover:scale-105 transition duration-300">
           <img src="assets/me.jpg" alt="Raymond Kwame Tawiah"
-               class="team-img w-32 h-32 mx-auto rounded-full object-cover mb-3 border-4 border-[#38bdf8] shadow-md cursor-pointer">
+            class="team-img w-32 h-32 mx-auto rounded-full object-cover mb-3 border-4 border-[#38bdf8] shadow-md cursor-pointer">
           <h3 class="text-lg font-extrabold text-[#38bdf8]">Raymond Kwame Tawiah</h3>
           <p class="text-sm text-[#cbd5e1]">Software Engineer</p>
         </div>
       </div>
 
-    
+
     </section>
 
     <!-- Popup Modal -->
@@ -263,49 +271,49 @@
 </div>
 
 <script>
-const accordionHeaders = document.querySelectorAll('.accordion-header');
-accordionHeaders.forEach(header => {
+  const accordionHeaders = document.querySelectorAll('.accordion-header');
+  accordionHeaders.forEach(header => {
   header.addEventListener('click', () => {
-    const content = header.nextElementSibling;
-    const arrow = header.querySelector('.arrow');
+  const content = header.nextElementSibling;
+  const arrow = header.querySelector('.arrow');
 
-    // Close all other sections
-    document.querySelectorAll('.accordion-content').forEach(c => c.classList.add('hidden'));
-    document.querySelectorAll('.arrow').forEach(a => a.classList.remove('rotate-180'));
+  // Close all other sections
+  document.querySelectorAll('.accordion-content').forEach(c => c.classList.add('hidden'));
+  document.querySelectorAll('.arrow').forEach(a => a.classList.remove('rotate-180'));
 
-    // Toggle clicked section
-    if (content.classList.contains('hidden')) {
-      content.classList.remove('hidden');
+  // Toggle clicked section
+  if (content.classList.contains('hidden')) {
+  content.classList.remove('hidden');
 
-      // Rotate arrow only on mobile screens
-      if (window.innerWidth < 768 && arrow) {
-        arrow.classList.add('rotate-180');
-      }
-    }
-  });
+  // Rotate arrow only on mobile screens
+  if (window.innerWidth < 768 && arrow) {
+  arrow.classList.add('rotate-180');
+}
+}
+});
 });
 
 // Team image modal
 const modal = document.getElementById('imageModal');
 const modalImg = document.getElementById('modalImage');
 document.querySelectorAll('.team-img').forEach(img => {
-  img.addEventListener('click', () => {
-    modal.classList.remove('hidden');
-    modalImg.src = img.src;
-  });
+img.addEventListener('click', () => {
+modal.classList.remove('hidden');
+modalImg.src = img.src;
+});
 });
 modal.addEventListener('click', () => modal.classList.add('hidden'));
 </script>
 
 
 <style>
-.arrow {
+  .arrow {
   display: inline-block;
   transition: transform 0.3s ease;
 }
 
 .rotate-180 {
-  transform: rotate(180deg);
+transform: rotate(180deg);
 }
 
 </style>
